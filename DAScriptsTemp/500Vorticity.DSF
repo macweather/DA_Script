@@ -1,0 +1,5 @@
+#Script: 500 hPa + Vorticity Analysis
+STAMP
+POINT
+product,plf,500,PLOT
+EXPORT,D:\Program Files\DigAtmEquinox\Temp_Maps\08111800Z_500_VOR.gif

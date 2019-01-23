@@ -1,0 +1,43 @@
+#
+# Fog Stability Index 
+# 
+# Formula: 4*Tsfc-2*(T850+Tdsfc)+W850
+# 
+# > 55 Low 
+# 31-55 Moderate 
+# < 31 High
+.........設定 年分 -----------
+SET,1,08
+#........設定 月份 ------------
+set,2,12
+.........設定 日期 -----------
+SET,3,24
+.........設定 時間 -----------
+SET,4,12
+.........設定 路徑 -----------
+SET,5,C:\Users\MacWeather\Documents\Sam2009\fog\FogMaps\
+#
+#
+erase
+MAKE,1,26.0,120.,3000,1000,800,0,0,1,1
+ingest,C:\Users\MacWeather\archive\syn\$$1$$2$$3$$4.syn
+ANALYZE,STOR=2 SMLC=1:4 STOR=1 TEMP HSFC
+ANALYZE,STOR=4 DWPT HSFC
+ingest,C:\Users\MacWeather\archive\upa\$$1$$2$$3$$4.upa
+ANALYZE,STOR=3 TEMP H850
+ANALYZE,STOR=8 VKNT WSPD H850
+#------------------------------------------------------------------------------------
+ANALYZE,STOR=6 SMLC=5:2 STOR=5 SSUM=3:4
+ANALYZE,STOR=7 SDIF=2:6
+ANALYZE,STOR=9 SSUM=7:8
+#
+ANALYZE,OVER FILL COLOR=255:255:180 FILS=0 GRTN=31 SSBC=9:0
+ANALYZE,OVER FILL COLOR=255:255:255 FILS=0 GRTN=55 SSBC=9:0
+ANALYZE,OVER FILL COLOR=255:255:000 FILS=0 LSTN=31 SSBC=9:0
+#
+ANALYZE,CONT CINT=5 COLOR=255:000:000 DOTS SSBC=9:0
+ingest,C:\Users\MacWeather\archive\syn\$$1$$2$$3$$4.syn
+ANALYZE,HILO CONT CINT=2 LINE=2 SOLID COLOR=100,100,100 SLPR HSFC
+STAMP
+POINT
+EXPORT,$$5$$1$$2$$3$$4Z_FOG.gif

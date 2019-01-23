@@ -1,0 +1,5 @@
+Ã¸¾W­±¹Ï
+download,http://www.hpc.ncep.noaa.gov/discussions/codsus,D:\DigitalAtmosphereWS\archive\fronts.dat
+ingest,D:\DigitalAtmosphereWS\archive\fronts.dat
+product,wxp,0,fronts 
+

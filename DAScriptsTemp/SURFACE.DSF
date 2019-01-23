@@ -1,0 +1,20 @@
+#*********************SET KEYNUMBER*********************************
+set,1,08
+# ............Set up & MONTH
+set,2,12
+# ............SET UP DATE
+set,3,16
+# ............SET UP HOUR
+set,4,00
+# ............SET UP URL
+set,5,C:\Users\MacWeather\MAPS\
+
+ingest,C:\Users\MacWeather\archive\upa\$$1$$2$$3$$4.upa
+ERASE
+MAKE,1,34.0,118.0,5000,1000,800,0,0,1,1
+#ANALYZE,OVER FILL COLOR=200:100:200 FILS=0 GRTN=110 VKNT WSPD FILL COLOR=200:100:100 FILS=0 GRTN=90 VKNT WSPD FILL COLOR=200:200:100 FILS=0 GRTN=70 VKNT WSPD FILL COLOR=100:200:100 FILS=0 GRTN=50 VKNT WSPD
+#ANALYZE,VECT COLOR=000:000:000 WIND HSFC
+product,plf,500,PLOT
+POINT
+STAMP
+EXPORT,$$5$$1$$2$$3$$4_700.gif

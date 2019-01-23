@@ -1,0 +1,28 @@
+#***METAR from Albany (worldwide)
+#***http://www.atmos.albany.edu/weather/data1/surface/sao/@Y@M@D@H_sao.wmo
+*
+#***SYNOP from COD (worldwide)
+#***http://weather.cod.edu/digatmos/syn/@Y@M@D@I.syn
+http://www.met.fsu.edu/rawdata/syn/20@YYZ@MMZ@DDZ/20@YYZ@MMZ@DDZ00.syn
+http://weather.admin.niu.edu/data/@YYZ@MMZ@DDZ00.syn
+*
+#***Buoy from Albany (worldwide)
+#***http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo
+*
+#***Radiosonde from COD (worldwide)
+#***http://weather.cod.edu/digatmos/upa/@Y@M@D@X.upa
+http://weather.admin.niu.edu/data/@YYZ@MMZ@DDZ00.upa
+
+http://www.met.fsu.edu/rawdata/radiosonde/20081220/2008122012.rdisnd
+*
+#***METAR from FSU (worldwide)
+#***http://dweb.met.fsu.edu/rawdata/metar/20@Y@M@D/20@Y@M@D@H.metar
+*
+#***Typhoon track #1 from JTWC (NW Pacific)
+#***http://weather.noaa.gov/pub/data/raw/wt/wtpn31.pgtw..txt
+#***http://weather.noaa.gov/pub/data/raw/wt/wtpn32.pgtw..txt
+#***http://weather.noaa.gov/pub/data/raw/wt/wtpn33.pgtw..txt
+#***http://weather.noaa.gov/pub/data/raw/wt/wtpn34.pgtw..txt
+*
+#***http://www.atmos.albany.edu/deas/wx.html 
+#***http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M$$3@S_boy.wmo

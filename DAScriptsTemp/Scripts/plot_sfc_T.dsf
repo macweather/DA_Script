@@ -1,0 +1,6 @@
+#..................FILENAME: PLOT_Tc.DSF
+#........SADC:¥Îstor1³õ-39
+ERASE
+#...................... RRR:GGG:BBB..........................
+Analyze,CONT CINT=5 LINE=2 solid COLOR=000:000:255 LSTN=0 CONT CINT=5 LINE=1 DASH COLOR=255:0:0 GRTN=0 TEMP hsfc
+#

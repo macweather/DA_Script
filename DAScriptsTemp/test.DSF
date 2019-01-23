@@ -1,0 +1,68 @@
+#=============== DOWNLOAD AAXX REPORT ==============================================================================================
+#download,http://weather.admin.niu.edu/data/@YYZ@MMZ@DDZ00.syn,C:\Users\Benjamin\OneDrive\15SourceData\syn\@YYZ@MMZ@DDZ00.syn
+#download,http://weather.admin.niu.edu/data/@YYZ@MMZ@DDZ06.syn,C:\Users\Benjamin\OneDrive\15SourceData\syn\@YYZ@MMZ@DDZ06.syn
+#download,http://weather.admin.niu.edu/data/@YYZ@MMZ@DDZ12.syn,C:\Users\Benjamin\OneDrive\15SourceData\syn\@YYZ@MMZ@DDZ12.syn
+#download,http://weather.admin.niu.edu/data/@YYZ@MMZ@DDZ18.syn,C:\Users\Benjamin\OneDrive\15SourceData\syn\@YYZ@MMZ@DDZ18.syn
+
+
+#=============== DOWNLOAD METAR REPORT ==============================================================================================
+
+download,http://dweb.met.fsu.edu/rawdata/syn/20@Y@M@D/20@YYZ@MMZ@DDZ00.syn,C:\Users\Benjamin\OneDrive\15SourceData\sao\@YYZ@MMZ@DDZ00.sao
+download,http://dweb.met.fsu.edu/rawdata/syn/20@Y@M@D/20@YYZ@MMZ@DDZ03.syn,C:\Users\Benjamin\OneDrive\15SourceData\sao\@YYZ@MMZ@DDZ03.sao
+download,http://dweb.met.fsu.edu/rawdata/syn/20@Y@M@D/20@YYZ@MMZ@DDZ06.syn,C:\Users\Benjamin\OneDrive\15SourceData\sao\@YYZ@MMZ@DDZ06.sao
+download,http://dweb.met.fsu.edu/rawdata/syn/20@Y@M@D/20@YYZ@MMZ@DDZ09.syn,C:\Users\Benjamin\OneDrive\15SourceData\sao\@YYZ@MMZ@DDZ09.sao
+download,http://dweb.met.fsu.edu/rawdata/syn/20@Y@M@D/20@YYZ@MMZ@DDZ12.syn,C:\Users\Benjamin\OneDrive\15SourceData\sao\@YYZ@MMZ@DDZ12.sao
+download,http://dweb.met.fsu.edu/rawdata/syn/20@Y@M@D/20@YYZ@MMZ@DDZ15.syn,C:\Users\Benjamin\OneDrive\15SourceData\sao\@YYZ@MMZ@DDZ15.sao
+download,http://dweb.met.fsu.edu/rawdata/syn/20@Y@M@D/20@YYZ@MMZ@DDZ18.syn,C:\Users\Benjamin\OneDrive\15SourceData\sao\@YYZ@MMZ@DDZ18.sao
+download,http://dweb.met.fsu.edu/rawdata/syn/20@Y@M@D/20@YYZ@MMZ@DDZ21.syn,C:\Users\Benjamin\OneDrive\15SourceData\sao\@YYZ@MMZ@DDZ21.sao
+
+
+#=============== DOWNLOAD RAWINSONDE REPORT ========================================================================================
+DOWNLOAD,httphttp://weather.cod.edu/digatmos/upa/@YYZ@MMZ@DDZ00.upa,C:\Users\Benjamin\OneDrive\15SourceData\upa\@YYZ@MMZ@DDZ00Z.syn
+DOWNLOAD,httphttp://weather.cod.edu/digatmos/upa/@YYZ@MMZ@DDZ12.upa,C:\Users\Benjamin\OneDrive\15SourceData\upa\@YYZ@MMZ@DDZ12Z.syn
+
+
+
+
+
+
+
+
+
+#
+#=============== DOWNLOAD RAWINSONDE REPORT ========================================================================================
+DOWNLOAD,http://weather.cod.edu/digatmos/upa/$$1$$2$$300.upa,$$4upa\$$1$$2$$300.upa
+DOWNLOAD,http://weather.cod.edu/digatmos/upa/$$1$$2$$312.upa,$$4upa\$$1$$2$$312.upa
+#DOWNLOAD,http://weather.admin.niu.edu/data/@YYZ@MMZ@DDZ00.upa,$$4upa\$$1$$2$$300.upa
+#DOWNLOAD,http://weather.admin.niu.edu/data/@YYZ@MMZ@DDZ12.upa,$$4upa\$$1$$2$$312.upa
+#
+#=============== DOWNLOAD BOUYANCY REPORT ==========================================================================================
+DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/$$1$$2$$300_boy.wmo,$$4boy\$$1$$2$$300.boy
+DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/$$1$$2$$303_boy.wmo,$$4boy\$$1$$2$$303.boy
+DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/$$1$$2$$306_boy.wmo,$$4boy\$$1$$2$$306.boy
+DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/$$1$$2$$309_boy.wmo,$$4boy\$$1$$2$$309.boy
+DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/$$1$$2$$312_boy.wmo,$$4boy\$$1$$2$$312.boy
+DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/$$1$$2$$315_boy.wmo,$$4boy\$$1$$2$$315.boy
+DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/$$1$$2$$318_boy.wmo,$$4boy\$$1$$2$$318.boy
+DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/$$1$$2$$321_boy.wmo,$$4boy\$$1$$2$$321.boy
+
+#
+#=============== DOWNLOAD SHIPS DATA ==========================================================================================
+DOWNLOAD,http://meteora.ucsd.edu/weather/observations/ships/$$1$$2$$3.bbx,$$4bxx\$$1$$2$$3.bbx
+#
+
+#
+#=============== DOWNLOAD KMA Chart=========================
+#DOWNLOAD,http://www.kma.go.kr/cht/img/sfc3_20$$1$$2$$300.png,D:\Program Files\DigAtmEquinox\MAPS\JMA\20$$1$$2$$300.png
+#DOWNLOAD,http://www.kma.go.kr/cht/img/sfc3_20$$1$$2$$303.png,D:\Program Files\DigAtmEquinox\MAPS\JMA\20$$1$$2$$303.png
+#DOWNLOAD,http://www.kma.go.kr/cht/img/sfc3_20$$1$$2$$306.png,D:\Program Files\DigAtmEquinox\MAPS\JMA\20$$1$$2$$306.png
+#DOWNLOAD,http://www.kma.go.kr/cht/img/sfc3_20$$1$$2$$309.png,D:\Program Files\DigAtmEquinox\MAPS\JMA\20$$1$$2$$309.png
+#DOWNLOAD,http://www.kma.go.kr/cht/img/sfc3_20$$1$$2$$312.png,D:\Program Files\DigAtmEquinox\MAPS\JMA\20$$1$$2$$312.png
+#DOWNLOAD,http://www.kma.go.kr/cht/img/sfc3_20$$1$$2$$315.png,D:\Program Files\DigAtmEquinox\MAPS\JMA\20$$1$$2$$315.png
+#DOWNLOAD,http://www.kma.go.kr/cht/img/sfc3_20$$1$$2$$318.png,D:\Program Files\DigAtmEquinox\MAPS\JMA\20$$1$$2$$318.png
+#DOWNLOAD,http://www.kma.go.kr/cht/img/sfc3_20$$1$$2$$321.png,D:\Program Files\DigAtmEquinox\MAPS\JMA\20$$1$$2$$321.png
+#
+#
+#
+#
+#

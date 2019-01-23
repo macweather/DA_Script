@@ -1,0 +1,8 @@
+MAKE,1,25.0,120.0,3000,800,600,0,0,1,1 
+download,http://iwin.nws.noaa.gov/iwin/us/thunderstorm.html,d:\DigitalAtmospherWS\warnings\thunderstorm.html 
+#download,http://iwin.nws.noaa.gov/iwin/us/tornado.html,d:\DigitalAtmospherWS\warnings\tornado.html
+download,http://www.spc.noaa.gov/products/outlook/day1otlk.html,d:\DigitalAtmospherWS\warnings\day1otlk.html 
+ingest,d:\DigitalAtmospherWS\warnings\*.* 
+product,wrx 
+product,dy1 
+stamp

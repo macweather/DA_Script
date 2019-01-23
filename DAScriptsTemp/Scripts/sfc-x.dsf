@@ -1,0 +1,13 @@
+#............set up Year & Month
+set,1,0602
+#...........set up Date & Hour
+set,2,2612
+#
+erase
+INGEST,D:\DigitalAtmosphereWS\archive\syn\$$1$$2.syn
+MAKE,1,34.0,118.,5000,1550,1024,0,0,1,1
+PRODUCT,plf,0,plot
+stamp
+export,d:\DigitalAtmosphereWS\maps\$$1$$2_sfx.gif
+#......... BACK TO ORIGINAL SIZE ..........................
+MAKE,1,34.0,118.,5000,1000,800,0,0,1,1

@@ -1,0 +1,42 @@
+# URL reference
+#****************************************************************************************************
+#*** http://weather.cod.edu/digatmos/syn/@Y@M@D@I.syn  ------------------------ SYNOPTIC DATA       *
+#*** http://weather.cod.edu/digatmos/sao/@Y@M@D@H.sao .... .....................METAR DATA          *
+#*** http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo---- SYNOPTIC DATA       *
+#*** http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo---- BOUYANCY DATA       *
+#*** http://weather.cod.edu/digatmos/upa/@Y@M@D@X.upa ------------------------- UPPER AIR DATA      * 
+#*** http://meteora.ucsd.edu/weather/observations/upperair/@Y@M@D@X_upa.wmo --- UPPER AIR DATA      *
+#*** http://www.met.fsu.edu/Data/archive/metar/20@Y@M@D@H_metar --------------- METAR               *
+#*** http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo --- SURFACE DATA        *
+#*** http://www.rap.ucar.edu/weather/upper.html                                                     *
+#****************************************************************************************************
+#...........下載氣象電碼資料...............
+download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D03_syn.wmo,D:\DigitalAtmosphereWS\archive\syn\@YYZ@MMZ@DDZ03.syn
+download,http://meteora.ucsd.edu/weather/observations/metar/@Y@M@D03_sao.wmo,D:\DigitalAtmosphereWS\archive\sao\@YYZ@MMZ@DDZ03.sao
+#download,http://weather.cod.edu/digatmos/sao/@Y@M@D03_syn,D:\DigitalAtmosphereWS\archive\syn\@YYZ@MMZ@DDZ03.syn
+#download,http://weather.cod.edu/digatmos/sao/@Y@M@D03_sao.wmo,D:\DigitalAtmosphereWS\archive\sao\@YYZ@MMZ@DDZ03.sao
+#
+ingest,D:\DigitalAtmosphereWS\archive\syn\@YYZ@MMZ@DDZ03.syn
+erase
+#MAKE,1,26.0,120.0,3000,1000,800,0,0,1,1
+load,D:\DIGITALATMOSPHEREWS\meso.dmf
+import,D:\DIGITALATMOSPHEREWS\meso0.gif
+#load,D:\DIGITALATMOSPHEREWS\synoptic.dmf
+#IMPORT,D:\DIGITALATMOSPHEREWS\meso0.gif
+#...... PLOT RELATIVE HUMIDITY OVER 70% IN EVERY 10% INTERVAL
+ANALYZE,OVER FILL COLOR=100:230:100 EQUA=100 OVER FILL COLOR=140:255:140 GRTN=90 OVER FILL COLOR=170:255:170 GRTN=80 OVER FILL COLOR=200:255:200 GRTN=70 SADC=1:0 STOR=1 RELH HSFC
+ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000:160:000 GRTN=80 RELH HSFC
+#.........PLOT SEA LEVEL PRESSURE .AND TEMPERATURE ........ 
+analyze,HILO CONT CINT=2 LINE=2 COLOR=0:0:0: SLPR HSFC
+#analyze,CONT CINT=3 LINE=1 dash color=240:000:000 TEMP HSFC
+analyze,CONT CINT=4 LINE=1 DOTS color=250:000:000 LSTN=00 PTEN HSFC
+ANALYZE,CONT CINT=4 LINE=1 DOTS COLOR=000:000:250 GRTN=10 PTEN HSFC
+ANALYZE,CONT LINE=2 EQUA=0 COLOR=250:000:250 PTEN HSFC
+#........PLOT TEMPERATURE ADVECTION
+#ANALYZE,MXMN CONT EQUA=0 COLOR=200:0:200 LINE=1 CONT GRTN=0 CINT=0.05 COLOR=250:170:0 LINE=1 CONT LSTN=0 CINT=0.05 COLOR=0:0:220 LINE=1 ADVT TEMP/WIND HSFC
+#POINT
+product,plf,0, PLOT
+STAMP
+IMPORT,D:\DIGITALATMOSPHEREWS\MARK_SFC03.GIF
+EXPORT,D:\DigitalAtmosphereWS\maps\@YYZ@MMZ@DDZ03_sfcm.GIF
+#

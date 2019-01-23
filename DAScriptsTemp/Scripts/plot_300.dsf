@@ -1,0 +1,73 @@
+#  URL reference
+#****************************************************************************************************
+#*** http://weather.cod.edu/digatmos/syn/@Y@M@D@I.syn  ------------------------ SYNOPTIC DATA       *
+#*** http://weather.cod.edu/digatmos/sao/@Y@M@D@H.sao .... .....................METAR DATA          *
+#*** http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo---- SYNOPTIC DATA       *
+#*** http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo---- BOUYANCY DATA       *
+#*** http://weather.cod.edu/digatmos/upa/@Y@M@D@X.upa ------------------------- UPPER AIR DATA      * 
+#*** http://meteora.ucsd.edu/weather/observations/upperair/@Y@M@D@X_upa.wmo --- UPPER AIR DATA      *
+#*** http://www.met.fsu.edu/Data/archive/metar/20@Y@M@D@H_metar --------------- METAR               *
+#*** http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo --- SURFACE DATA        *
+#*** http://www.rap.ucar.edu/weather/upper.html                                                     *
+#****************************************************************************************************
+#.................................................下載氣象電碼資料............................................
+#download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D00_syn.wmo,D:\DigitalAtmosphereWS\archive\syn\@YYZ@MMZ@DDZ00.syn
+#download,http://weather.cod.edu/digatmos/sao/@Y@M@D00.sao,D:\DigitalAtmosphereWS\archive\sao\@YYZ@MMZ@DDZ00.sao
+#download,http://weather.cod.edu/digatmos/upa/@Y@M@D00.upa,D:\DigitalAtmosphereWS\archive\upa\@YYZ@MMZ@DDZ00.upa
+#-------------------------------- import the data ---------------------------------------------------
+#ingest,D:\DigitalAtmosphereWS\archive\upa\@YYZ@MMZ@DDZ00.upa
+#=============================================================================================================
+#
+#-------- 繪出200 HPA 等高線與報告，並且將等風速線以不同顏色填滿顏色。
+#
+ERASE
+MAKE,1,35.0,121.,5000,1000,800,0,0,1,1
+ANALYZE,STOR=1 VKNT WSPD H200
+ANALYZE,OVER FILL COLOR=255:230:030 GRTN=050 SADC=1:00
+ANALYZE,OVER FILL COLOR=050:230:245 GRTN=080 SADC=1:00
+ANALYZE,OVER FILL COLOR=100:184:220 GRTN=090 SADC=1:00
+ANALYZE,OVER FILL COLOR=190:140:150 GRTN=100 SADC=1:00
+ANALYZE,OVER FILL COLOR=200:127:100 GRTN=110 SADC=1:00
+ANALYZE,OVER FILL COLOR=240:240:040 GRTN=120 SADC=1:00
+ANALYZE,OVER FILL COLOR=250:220:020 GRTN=130 SADC=1:00
+ANALYZE,OVER FILL COLOR=250:200:000 GRTN=140 SADC=1:00
+ANALYZE,OVER FILL COLOR=255:000:255 GRTN=150 SADC=1:00
+ANALYZE,OVER FILL COLOR=255:000:000 GRTN=200 SADC=1:00
+#ANALYZE,OVER FILL COLOR=255:050:255 GRTN=200 OVER FILL COLOR=255:079:000 GRTN=150 OVER FILL COLOR=255:127:000 GRTN=100 OVER FILL COLOR=255:174:000 GRTN=090 OVER FILL COLOR=255:230:000 GRTN=080 SADC=1:00 STOR=1 VKNT WSPD H200
+#
+#.......在200 MB 繪向量場
+#analyze,VECT COLOR=000:000:000 WIND H200
+#....... 在200 MB 測站上填圖
+#-----------------------------------------------------------------------
+#........在200圖上繪等高線，間隔為120 GPM，線寬為2，繪實線，顏色為黑色。
+ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000,255,000 GRTN=50 VKNT WSPD H200
+ANALYZE,HILO CONT CINT=120 LINE=2 SOLD COLOR=000,000,000 HGHT H200
+ANALYZE,CONT CINT=5 LINE=1 DASH COLOR=255,000,000 TEMP H200
+PRODUCT,PLF,200,PLOT
+POINT
+STAMP
+IMPORT,D:\DIGITALATMOSPHEREWS\MARK_200.GIF
+#....... 將200 MB 圖輸出到d:\DigitalAtmosphereWS\maps\，檔名為200.gif
+EXPORT,D:\DigitalAtmosphereWS\Maps\@YYL@MML@DDL00_200.gif
+#===================================================================================================================
+#    * REMARK : DON'T USE .JPG FILE , FIGURE QUALITY IS POOR.
+#---------------------------------------------------------------------------
+#  繪出300 HPA 等高線與報告，並且將等風速線以不同顏色填滿顏色。
+ERASE
+MAKE,1,35.0,121.,5000,1000,800,0,0,1,1
+ANALYZE,OVER FILL COLOR=255:050:255 GRTN=200 OVER FILL COLOR=255:079:000 GRTN=150 OVER FILL COLOR=255:127:000 GRTN=100 OVER FILL COLOR=255:174:000 GRTN=090 OVER FILL COLOR=255:230:000 GRTN=080 SADC=1:00 STOR=1 VKNT WSPD H300
+#................. PLOT ISOTACHES
+ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000,200,000 GRTN=50 VKNT WSPD H300
+#.................在300 MB 繪向量場
+#analyze,VECT COLOR=000:000:000 WIND H300
+#................ 在300 MB 地圖上填圖
+PRODUCT,PLF,300,PLOT
+#.................在300圖上繪等高線，間隔為120 GPM，線寬為2，繪實線，顏色為黑色。
+ANALYZE,HILO CONT CINT=120 LINE=2 SOLD COLOR=000,000,000 HGHT H300
+ANALYZE,CONT CINT=5 LINE=1 DASH COLOR=255,000,000 TEMP H300
+#....... 將300 MB 圖輸出到d:\DigitalAtmosphereWS\maps\，檔名為300.gif
+STAMP
+POINT
+IMPORT,D:\DIGITALATMOSPHEREWS\MARK_300.GIF
+EXPORT,D:\DIGITALATMOSPHEREWS\MAPS\@YYL@MML@DDL00_300.gif
+#===========================================================================

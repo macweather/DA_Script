@@ -1,0 +1,66 @@
+#---------- import the data -----------------------------------------------------------------------------
+#ingest,D:\DigitalAtmosphereWS\archive\upa\@YYZ@MMZ@DDZ00.upa
+#
+MAKE,1,38.0,118.0,5500,1550,1150,0,0,1,1
+import,d:\DigitalAtmosphereWS\tempX(38x118_1550x1150).gif
+POINT
+PRODUCT,PLF,200,PLOT
+STAMP
+#....... 將200 MB 圖輸出到d:\DigitalAtmosphereWS\maps\，檔名為200.gif
+EXPORT,D:\DigitalAtmosphereWS\Maps\@YYL@MML@DDLxx_200.GIF
+#=====================================================================
+#  繪出300 HPA 等高線與報告，並且將等風速線以不同顏色填滿顏色。
+ERASE
+import,d:\DigitalAtmosphereWS\tempX(38x118_1550x1150).gif
+POINT
+PRODUCT,PLF,300,PLOT
+STAMP
+EXPORT,D:\DIGITALATMOSPHEREWS\MAPS\@YYL@MML@DDLxx_300.GIF
+#
+#=======================================================================
+#  繪出500 HPA 等高線與報告，並且將等風速線以不同顏色填滿顏色。
+ERASE
+import,d:\DigitalAtmosphereWS\tempX(38x118_1550x1150).gif
+POINT
+PRODUCT,PLF,500,PLOT
+STAMP
+EXPORT,D:\DIGITALATMOSPHEREWS\MAPS\@YYL@MML@DDLxx_500.GIF
+#
+#=======================================================================
+#  繪出700 HPA 等高線與報告，並且將等風速線以不同顏色填滿顏色。
+ERASE
+import,d:\DigitalAtmosphereWS\tempX(38x118_1550x1150).gif
+POINT
+PRODUCT,PLF,700,PLOT
+STAMP
+EXPORT,D:\DIGITALATMOSPHEREWS\MAPS\@YYL@MML@DDLxx_700.GIF
+#
+#=======================================================================
+#  繪出850 HPA 等高線與報告，並且將等風速線以不同顏色填滿顏色。
+ERASE
+import,d:\DigitalAtmosphereWS\tempX(38x118_1550x1150).gif
+POINT
+PRODUCT,PLF,850,PLOT
+STAMP
+EXPORT,D:\DIGITALATMOSPHEREWS\MAPS\@YYL@MML@DDLxx_850.GIF
+#
+#=======================================================================
+#  繪出925 HPA 等高線與報告，並且將等風速線以不同顏色填滿顏色。
+ERASE
+import,d:\DigitalAtmosphereWS\tempX(38x118_1550x1150).gif
+POINT
+PRODUCT,PLF,925,PLOT
+STAMP
+EXPORT,D:\DIGITALATMOSPHEREWS\MAPS\@YYL@MML@DDLxx_925.GIF
+#
+#=======================================================================
+#  繪出 SFC HPA 等高線與報告，並且將等風速線以不同顏色填滿顏色。
+ERASE
+import,d:\DigitalAtmosphereWS\tempX(38x118_1550x1150).gif
+POINT
+PRODUCT,PLF,0,PLOT
+STAMP
+EXPORT,D:\DIGITALATMOSPHEREWS\MAPS\@YYL@MML@DDLxx_SFC.GIF
+#
+#=======================================================================
+

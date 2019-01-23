@@ -1,0 +1,16 @@
+#................K_Fills_Script.dsf 
+ERASE
+ingest,D:\DigitalAtmosphereWS\archive\upa\@YYZ@MMZ@DDZ00.UPA
+ANALYZE,OVER FILL COLOR=255:0:0 FILS=0 GRTN=45 SDIF=7:8 OVER FILL COLOR=255:162:0 FILS=0 GRTN=35 SDIF=7:8 OVER FILL COLOR=222:255:0 FILS=0 GRTN=25 SDIF=7:8 STOR=8 SSUM=6:3 STOR=7 SDIF=4:5 STOR=6 SDIF=1:2 STOR=5 DEGC DWPT H700 STOR=4 TEMP H700 STOR=3 DEGC DWPT H850 STOR=2 TEMP H500 STOR=1 TEMP H850
+#
+#................K_contours script
+#ERASE 
+ANALYZE,CONT GRTN=0 CINT=2 DASH COLOR=200:100:100 SDIF=7:8 STOR=8 SSUM=6:3 STOR=7 SDIF=4:5 STOR=6 SDIF=1:2 STOR=5 DEGC DWPT H700 STOR=4 TEMP H700 STOR=3 DEGC DWPT H850 STOR=2 TEMP H500 STOR=1 TEMP H850
+STAMP 
+EXPORT,D:\DigitalAtmosphereWS\Maps\@YYL@MML@DDL00_KI.gif
+#
+#  20 ~ 25       35% isolated thunderstorm
+#  26 ~ 29       50% widely scattered thunderstorms
+#  30 ~ 35       85% numerous thunderstorms
+#      >36      100% chance for thunderstorms
+#

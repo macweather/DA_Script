@@ -1,0 +1,31 @@
+#******************************************************************************************************
+#***   http://weather.cod.edu/digatmos/syn/@Y@M@D@I.syn  ------------------------ SYNOPTIC DATA       *
+#***   http://weather.cod.edu/digatmos/sao/@Y@M@D@H.sao .... .....................METAR DATA          *
+#***   http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo---- SYNOPTIC DATA       *
+#***   http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo---- BOUYANCY DATA       *
+#***   http://weather.cod.edu/digatmos/upa/@Y@M@D@X.upa ------------------------- UPPER AIR DATA      * 
+#***   http://www.met.fsu.edu/Data/archive/metar/20@Y@M@D@H_metar --------------- METAR               *
+#***   http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo --- SURFACE DATA        *
+#***   http://www.rap.ucar.edu/weather/upper.html                                                     *
+#***   http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D@X_syn.wmo --- SYNOPTIC  DATA      *
+#***   http://meteora.ucsd.edu/weather/observations/upperair/@Y@M@D@X_upa.wmo --- UPPER AIR DATA      *
+#***   http://meteora.ucsd.edu/weather/observations/buoys/@Y@M@D@H.zzx                                *
+#***   http://meteora.ucsd.edu/weather/observations/ship/@Y@M@D@H.bbx                                 *
+#******************************************************************************************************
+SET,1,00
+download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D00_syn.wmo,D:\DigitalAtmosphereWS\archive\syn\@YYL@MML@DDL$$1.syn
+download,http://meteora.ucsd.edu/weather/observations/metar/@Y@M@D00_sao.wmo,D:\DigitalAtmosphereWS\archive\sao\@YYL@MML@DDL$$1.sao
+download,http://weather.cod.edu/digatmos/upa/@Y@M@D00.upa,D:\DigitalAtmosphereWS\archive\upa\@YYL@MML@DDZ$$1.upa
+download,http://meteora.ucsd.edu/weather/observations/buoys/@Y@M@D00.zzx,D:\DigitalAtmosphereWS\archive\boy\@YYL@MML@DDZ.boy
+download,http://meteora.ucsd.edu/weather/observations/ship/@Y@M@D00.bbx,D:\DigitalAtmosphereWS\archive\ship\@YYL@MML@DDZ.bbx
+#
+#SET,2,12
+#download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D00_syn.wmo,D:\DigitalAtmosphereWS\archive\syn\@YYL@MML@DDL$$2.syn
+#download,http://meteora.ucsd.edu/weather/observations/metar/@Y@M@D00_sao.wmo,D:\DigitalAtmosphereWS\archive\sao\@YYL@MML@DDL$$2.sao
+#download,http://weather.cod.edu/digatmos/upa/@Y@M@D00.upa,D:\DigitalAtmosphereWS\archive\syn\upa\@YYL@MML@DDZ$$2.upa
+#download,http://meteora.ucsd.edu/weather/observations/buoys/@Y@M@D00.zzx,D:\DigitalAtmosphereWS\archive\boy\@YYL@MML@DDZ.boy
+#download,http://meteora.ucsd.edu/weather/observations/ship/@Y@M@D00.bbx,D:\DigitalAtmosphereWS\archive\ship\@YYL@MML@DDZ.bbx
+#
+#ingest,D:\DigitalAtmosphereWS\data\@YYL@MML@DDL00.syn
+#ingest,D:\DigitalAtmosphereWS\data\@YYL@MML@DDZ00.txt
+#ingest,D:\DigitalAtmosphereWS\data\@YYL@MML@DDL00.sao

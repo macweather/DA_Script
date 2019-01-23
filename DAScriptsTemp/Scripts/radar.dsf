@@ -1,0 +1,2 @@
+#
+download,http://meteora.ucsd.edu/weather/observations/radar/@Y@M@D$H30_rcm.wmo,d:\DigitalAtmosphereWS\data\radar.dat

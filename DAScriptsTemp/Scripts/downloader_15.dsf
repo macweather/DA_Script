@@ -1,0 +1,36 @@
+#  URL reference
+#****************************************************************************************************
+#*** http://weather.cod.edu/digatmos/syn/@Y@M@D@I.syn  ------------------------ SYNOPTIC DATA       *
+#*** http://weather.cod.edu/digatmos/sao/@Y@M@D@H.sao .... .....................METAR DATA          *
+#*** http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo---- SYNOPTIC DATA       *
+#*** http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo---- BOUYANCY DATA       *
+#*** http://weather.cod.edu/digatmos/upa/@Y@M@D@X.upa ------------------------- UPPER AIR DATA      * 
+#*** http://meteora.ucsd.edu/weather/observations/upperair/@Y@M@D@X_upa.wmo --- UPPER AIR DATA      *
+#*** http://www.met.fsu.edu/Data/archive/metar/20@Y@M@D@H_metar --------------- METAR               *
+#*** http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo --- SURFACE DATA        *
+#*** http://www.rap.ucar.edu/weather/upper.html                                                     *
+#****************************************************************************************************
+#...........下載氣象電碼資料...............
+download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D15_syn.wmo,D:\DigitalAtmosphereWS\archive\syn\@YYZ@MMZ@DDZ15.syn
+download,http://meteora.ucsd.edu/weather/observations/metar/@Y@M@D15_sao.wmo,D:\DigitalAtmosphereWS\archive\sao\@YYZ@MMZ@DDZ15.sao
+#
+ingest,D:\DigitalAtmosphereWS\archive\syn\@YYZ@MMZ@DDZ15.syn
+erase
+#MAKE,1,26.0,120.0,3000,1000,800,0,0,1,1
+load,D:\DIGITALATMOSPHEREWS\meso.dmf
+import,D:\DIGITALATMOSPHEREWS\meso0.gif
+#...... PLOT RELATIVE HUMIDITY OVER 80% IN EVERY 10% INTERVAL
+ANALYZE,OVER FILL COLOR=150:200:150 EQUA=100 OVER FILL COLOR=180:220:180 GRTN=90 OVER FILL COLOR=200:255:200 GRTN=80 SADC=1:00 STOR=1 RELH Hsfc
+ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000:160:000 GRTN=80 RELH HSFC
+#.........PLOT SEA LEVEL PRESSURE .AND TEMPERATURE ........ 
+analyze,HILO CONT CINT=2 LINE=2 SLPR HSFC
+analyze,CONT CINT=3 LINE=1 dash color=220:000:000 TEMP HSFC
+ANALYZE,HILO CONT CINT=2 LINE=2 SOLID COLOR=000,000,000 SLPR HSFC
+analyze,CONT CINT=2 LINE=1 DOTS color=250:000:000 LSTN=0 PTEN HSFC
+ANALYZE,CONT CINT=2 LINE=1 DOTS COLOR=000:000:250 GRTN=10 PTEN HSFC
+ANALYZE,CONT LINE=2 EQUA=0 COLOR=250:000:250 PTEN HSFC
+POINT
+product,plf,0, PLOT
+STAMP
+IMPORT,D:\DigitalAtmosphereWS\MARK_SFC15.GIF
+EXPORT,D:\DigitalAtmosphereWS\maps\@YYZ@MMZ@DDZ15_SFCm.GIF

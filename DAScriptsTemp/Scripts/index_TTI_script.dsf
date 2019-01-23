@@ -1,0 +1,27 @@
+#----------Total Totals Index (TT)------------------------
+#
+#        TT = T850 + Td850 - 2T500
+ERASE
+ANALYZE,CONT GRTN=44 CINT=2 DASH COLOR=200:100:100 SSUM= 5:6 STOR=6 SDIF 3:4 STOR=5 SDIF 1:2 STOR=4 TEMP H500 STOR=3 DWPT H850 STOR=2 TEMP H500 STOR=1 TEMP H850
+#
+ANALYZE,SSUM= 5:6 STOR=6 SDIF 3:4 STOR=5 SDIF 1:2 STOR=4 TEMP H500 STOR=3 DWPT H850 STOR=2 TEMP H500 STOR=1 TEMP H850 
+ANALYZE,OVER FILL COLOR=255:255:100 FILS=0 GRTN=44 
+ANALYZE,OVER FILL COLOR=255:230:000 FILS=0 GRTN=46
+ANALYZE,OVER FILL COLOR=255:200:000 FILS=0 GRTN=48
+ANALYZE,OVER FILL COLOR=255:160:000 FILS=0 GRTN=50
+ANALYZE,OVER FILL COLOR=255:100:000 FILS=0 GRTN=52
+ANALYZE,OVER FILL COLOR=255:050:014 FILS=0 GRTN=55
+ANALYZE,CONT LSTN=53 GRTN=44 CINT=2 DASH COLOR=100:100:100 
+ANALYZE,CONT GRTN=55 CINT=5 DASH COLOR=100:100:100 
+STAMP
+EXPORT,D:\DigitalAtmosphereWS\Maps\@YYL@MML@DDL@HHL_TTI.GIF
+#---------------------------------------------------------------------------------------------
+#The risk of severe weather activity is defined as follows:
+#
+#      44-45   Isolated moderate thunderstorms
+#      46-47   Scattered moderate / few heavy thunderstorms
+#      48-49   Scattered moderate / few heavy / isolated severe thunderstorms
+#      50-51   Scattered heavy / few severe thunderstorms and isolated tornadoes
+#      52-55   Scattered to numerous heavy / few to scattered severe thunderstorm / few tornadoes
+#      > 55    Numerous heavy / scattered severe thunderstorms and scattered tornadoes
+#**************************************************************************************************

@@ -1,0 +1,38 @@
+---BEGIN jet.dsf--- 
+LOAD,D:\Program Files\DigitalAtmosphereWS\maps\print\whatever.dmf 
+
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/sao/@Y@M@D@H_sao.wmo,D:\wx\scripts\ingest\metar.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo,D:\wx\scripts\ingest\synop.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo,D:\wx\scripts\ingest\buoy.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/upperair/@Y@M@D@X_upa.wmo,D:\wx\scripts\ingest\raob.txt 
+
+# INGEST,D:\wx\scripts\ingest\*.txt 
+
+ANALYZE,SADC=1:00 STOR=1 VKNT WSPD H300 
+ANALYZE,OVER FILL COLOR=000:000:255 GRTN=25 
+ANALYZE,OVER FILL COLOR=000:074:255 GRTN=30 
+ANALYZE,OVER FILL COLOR=000:115:255 GRTN=35 
+ANALYZE,OVER FILL COLOR=000:163:255 GRTN=40 
+ANALYZE,OVER FILL COLOR=000:204:255 GRTN=45 
+ANALYZE,OVER FILL COLOR=000:230:255 GRTN=50 
+ANALYZE,OVER FILL COLOR=000:255:255 GRTN=55 
+ANALYZE,OVER FILL COLOR=000:255:179 GRTN=60 
+ANALYZE,OVER FILL COLOR=127:255:000 GRTN=65 
+ANALYZE,OVER FILL COLOR=206:255:000 GRTN=70 
+ANALYZE,OVER FILL COLOR=255:255:000 GRTN=75 
+
+ANALYZE,SADC=1:00 STOR=1 VKNT WSPD H300 
+ANALYZE,OVER FILL COLOR=255:230:000 GRTN=80 
+ANALYZE,OVER FILL COLOR=255:204:000 GRTN=85 
+ANALYZE,OVER FILL COLOR=255:174:000 GRTN=90 
+ANALYZE,OVER FILL COLOR=255:153:000 GRTN=95 
+ANALYZE,OVER FILL COLOR=255:127:000 GRTN=100 
+ANALYZE,OVER FILL COLOR=255:079:000 GRTN=105 
+
+ANALYZE,STRM COLOR=000:000:000 WIND H300 
+PRODUCT,plf,300,Data Plots 
+STAMP 
+
+EXPORT,D:\WX\scripts\Output\Jetstream\Jet_@FFZ@MMZ@DDZ@HHZ@NNZ.jpg 
+EXPORT,Z:\public_html\jetstream\jet_@FFZ@MMZ@DDZ@HHZ@NNZ.gif 
+---END jet.dsf--- 

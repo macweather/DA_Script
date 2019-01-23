@@ -1,0 +1,8 @@
+set,1,200511
+set,2,2200
+set comment,$$1$$2
+analyze,cont cint=5 dash color=200:0:0 tmc h850
+PRODUCT,plf,850,plot
+PRODUCT,hgt,850,plot
+product,tmc,850,plot
+stamp

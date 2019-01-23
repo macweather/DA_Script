@@ -1,0 +1,362 @@
+---BEGIN Scheduler--- 
+**50 scripts/auto/pack_retrieve.dsf 
+
+0055 scripts/auto/synoptic.dsf 
+0058 scripts/auto/k.dsf 
+0100 scripts/auto/tq.dsf 
+0105 scripts/auto/tt.dsf 
+0110 scripts/auto/jet.dsf 
+0115 scripts/auto/6hr_precip.dsf 
+0120 scripts/auto/boyden.dsf 
+0125 scripts/auto/ko.dsf 
+0130 scripts/auto/press_levels.dsf 
+
+0655 scripts/auto/synoptic.dsf 
+0658 scripts/auto/k.dsf 
+0700 scripts/auto/tq.dsf 
+0705 scripts/auto/tt.dsf 
+0710 scripts/auto/jet.dsf 
+0715 scripts/auto/6hr_precip.dsf 
+0720 scripts/auto/boyden.dsf 
+0725 scripts/auto/ko.dsf 
+0730 scripts/auto/press_levels.dsf 
+
+1255 scripts/auto/synoptic.dsf 
+1258 scripts/auto/k.dsf 
+1300 scripts/auto/tq.dsf 
+1305 scripts/auto/tt.dsf 
+1310 scripts/auto/jet.dsf 
+1315 scripts/auto/6hr_precip.dsf 
+1320 scripts/auto/boyden.dsf 
+1325 scripts/auto/ko.dsf 
+1330 scripts/auto/press_levels.dsf 
+
+1855 scripts/auto/synoptic.dsf 
+1858 scripts/auto/k.dsf 
+1900 scripts/auto/tq.dsf 
+1905 scripts/auto/tt.dsf 
+1910 scripts/auto/jet.dsf 
+1915 scripts/auto/6hr_precip.dsf 
+1920 scripts/auto/boyden.dsf 
+1925 scripts/auto/ko.dsf 
+1930 scripts/auto/press_levels.dsf 
+---END Scheduler--- 
+
+---BEGIN pack_retrieve.dsf--- 
+DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/sao/@Y@M@D@H_sao.wmo,D:\wx\scripts\ingest\metar.txt 
+DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo,D:\wx\scripts\ingest\synop.txt 
+DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo,D:\wx\scripts\ingest\buoy.txt 
+DOWNLOAD,http://www.atmos.albany.edu/weather/data1/upperair/@Y@M@D@X_upa.wmo,D:\wx\scripts\ingest\raob.txt 
+
+INGEST,D:\wx\scripts\ingest\*.txt 
+---END pack_retrieve.dsf--- 
+
+
+---BEGIN synoptic.dsf--- 
+LOAD,D:\Program Files\DigitalAtmosphereWS\maps\print\whatever.dmf 
+
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/sao/@Y@M@D@H_sao.wmo,D:\wx\scripts\ingest\metar.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo,D:\wx\scripts\ingest\synop.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo,D:\wx\scripts\ingest\buoy.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/upperair/@Y@M@D@X_upa.wmo,D:\wx\scripts\ingest\raob.txt 
+
+# INGEST,D:\wx\scripts\ingest\*.txt 
+
+PRODUCT,plf,0,Data Plots 
+ANALYZE,HILO CONT CINT=2 LINE=2 SLPR 
+ANALYZE,VECT COLOR=0:0:255 WIND 
+STAMP 
+
+# IMPORT,D:\wx\scripts\overlay.gif 
+# STAMP 
+
+EXPORT,D:\WX\scripts\Output\synoptic\synop_@FFZ@MMZ@DDZ@HHZ@NNZ.gif 
+EXPORT,Z:\public_html\synoptic\synop_@FFZ@MMZ@DDZ@HHZ@NNZ.gif 
+---END synoptic.dsf--- 
+
+
+---BEGIN K.dsf--- 
+LOAD,D:\Program Files\DigitalAtmosphereWS\maps\print\whatever.dmf 
+
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/sao/@Y@M@D@H_sao.wmo,D:\wx\scripts\ingest\metar.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo,D:\wx\scripts\ingest\synop.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo,D:\wx\scripts\ingest\buoy.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/upperair/@Y@M@D@X_upa.wmo,D:\wx\scripts\ingest\raob.txt 
+
+# INGEST,D:\wx\scripts\ingest\*.txt 
+
+ANALYZE,STOR=1 TEMP H850 
+ANALYZE,STOR=2 TEMP H500 
+ANALYZE,STOR=3 DEGC DWPT H850 
+ANALYZE,STOR=4 TEMP H700 
+ANALYZE,STOR=5 DEGC DWPT H700 
+ANALYZE,STOR=6 SDIF=1:2 
+ANALYZE,STOR=7 SDIF=4:5 
+ANALYZE,STOR=8 SSUM=6:3 
+ANALYZE,SDIF=7:8 
+
+ANALYZE,OVER FILL COLOR=102:255:051 FILS=0 GRTN=26 
+ANALYZE,OVER FILL COLOR=255:255:100 FILS=0 GRTN=29 
+ANALYZE,OVER FILL COLOR=153:255:051 FILS=0 GRTN=32 
+ANALYZE,OVER FILL COLOR=204:255:051 FILS=0 GRTN=35 
+ANALYZE,OVER FILL COLOR=255:000:000 FILS=0 GRTN=36 
+
+ANALYZE,CONT CINT=2 DASH COLOR=200:100:100 
+
+ANALYZE,VECT COLOR=0:0:255 WIND 
+PRODUCT,plf,500,Data Plots 
+STAMP 
+
+EXPORT,D:\WX\scripts\Output\Stability\K\K_@FFZ@MMZ@DDZ@HHZ@NNZ.jpg 
+EXPORT,Z:\public_html\stability\k\K_@FFZ@MMZ@DDZ@HHZ@NNZ.gif 
+---END K.dsf--- 
+
+
+---BEGIN TQ.dsf--- 
+LOAD,D:\Program Files\DigitalAtmosphereWS\maps\print\whatever.dmf 
+
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/sao/@Y@M@D@H_sao.wmo,D:\wx\scripts\ingest\metar.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo,D:\wx\scripts\ingest\synop.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo,D:\wx\scripts\ingest\buoy.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/upperair/@Y@M@D@X_upa.wmo,D:\wx\scripts\ingest\raob.txt 
+
+# INGEST,D:\wx\scripts\ingest\*.txt 
+
+ANALYZE,STOR=1 TEMP H850 
+ANALYZE,STOR=2 DWPT H850 
+ANALYZE,STOR=3 SSUM=1:2 
+ANALYZE,STOR=4 TEMP H700 
+ANALYZE,STOR=5 SMLC=4:1.7 
+ANALYZE,SDIF=3:5 
+
+ANALYZE,OVER FILL COLOR=255:255:100 FILS=0 GRTN=12 
+ANALYZE,OVER FILL COLOR=255:014:014 FILS=0 GRTN=17 
+
+ANALYZE,CONT GRTN 12 CINT=1 DASH COLOR=200:100:100 
+
+ANALYZE,VECT COLOR=0:0:255 WIND 
+PRODUCT,plf,500,Data Plots 
+STAMP 
+
+EXPORT,D:\WX\scripts\Output\Stability\TQ\TQ_@FFZ@MMZ@DDZ@HHZ@NNZ.jpg 
+EXPORT,Z:\public_html\stability\tq\TQ_@FFZ@MMZ@DDZ@HHZ@NNZ.gif 
+---END TQ.dsf--- 
+
+
+---BEGIN TT.dsf--- 
+LOAD,D:\Program Files\DigitalAtmosphereWS\maps\print\whatever.dmf 
+
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/sao/@Y@M@D@H_sao.wmo,D:\wx\scripts\ingest\metar.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo,D:\wx\scripts\ingest\synop.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo,D:\wx\scripts\ingest\buoy.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/upperair/@Y@M@D@X_upa.wmo,D:\wx\scripts\ingest\raob.txt 
+
+# INGEST,D:\wx\scripts\ingest\*.txt 
+
+ANALYZE,STOR=1 TEMP H850 
+ANALYZE,STOR=2 TEMP H500 
+ANALYZE,STOR=3 DWPT H850 
+ANALYZE,STOR=4 TEMP H500 
+ANALYZE,STOR=5 SDIF=1:2 
+ANALYZE,STOR=6 SDIF=3:4 
+ANALYZE,SSUM=5:6 
+
+ANALYZE,OVER FILL COLOR=255:255:100 FILS=0 GRTN=44 
+ANALYZE,OVER FILL COLOR=255:240:000 FILS=0 GRTN=46 
+ANALYZE,OVER FILL COLOR=255:204:000 FILS=0 GRTN=48 
+ANALYZE,OVER FILL COLOR=255:161:000 FILS=0 GRTN=50 
+ANALYZE,OVER FILL COLOR=255:097:000 FILS=0 GRTN=52 
+ANALYZE,OVER FILL COLOR=255:014:014 FILS=0 GRTN=55 
+
+ANALYZE,CONT LSTN=53 GRTN=44 CINT=2 DASH COLOR=100:100:100 
+ANALYZE,CONT GRTN=55 CINT=5 DASH COLOR=100:100:100 
+
+ANALYZE,VECT COLOR=0:0:255 WIND 
+PRODUCT,plf,500,Data Plots 
+STAMP 
+
+EXPORT,D:\WX\scripts\Output\Stability\TT\TT_@FFZ@MMZ@DDZ@HHZ@NNZ.jpg 
+EXPORT,Z:\public_html\stability\tt\TT_@FFZ@MMZ@DDZ@HHZ@NNZ.gif 
+---END TT.dsf--- 
+
+
+---BEGIN jet.dsf--- 
+LOAD,D:\Program Files\DigitalAtmosphereWS\maps\print\whatever.dmf 
+
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/sao/@Y@M@D@H_sao.wmo,D:\wx\scripts\ingest\metar.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo,D:\wx\scripts\ingest\synop.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo,D:\wx\scripts\ingest\buoy.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/upperair/@Y@M@D@X_upa.wmo,D:\wx\scripts\ingest\raob.txt 
+
+# INGEST,D:\wx\scripts\ingest\*.txt 
+
+ANALYZE,SADC=1:00 STOR=1 VKNT WSPD H300 
+ANALYZE,OVER FILL COLOR=000:000:255 GRTN=25 
+ANALYZE,OVER FILL COLOR=000:074:255 GRTN=30 
+ANALYZE,OVER FILL COLOR=000:115:255 GRTN=35 
+ANALYZE,OVER FILL COLOR=000:163:255 GRTN=40 
+ANALYZE,OVER FILL COLOR=000:204:255 GRTN=45 
+ANALYZE,OVER FILL COLOR=000:230:255 GRTN=50 
+ANALYZE,OVER FILL COLOR=000:255:255 GRTN=55 
+ANALYZE,OVER FILL COLOR=000:255:179 GRTN=60 
+ANALYZE,OVER FILL COLOR=127:255:000 GRTN=65 
+ANALYZE,OVER FILL COLOR=206:255:000 GRTN=70 
+ANALYZE,OVER FILL COLOR=255:255:000 GRTN=75 
+
+ANALYZE,SADC=1:00 STOR=1 VKNT WSPD H300 
+ANALYZE,OVER FILL COLOR=255:230:000 GRTN=80 
+ANALYZE,OVER FILL COLOR=255:204:000 GRTN=85 
+ANALYZE,OVER FILL COLOR=255:174:000 GRTN=90 
+ANALYZE,OVER FILL COLOR=255:153:000 GRTN=95 
+ANALYZE,OVER FILL COLOR=255:127:000 GRTN=100 
+ANALYZE,OVER FILL COLOR=255:079:000 GRTN=105 
+
+ANALYZE,STRM COLOR=000:000:000 WIND H300 
+PRODUCT,plf,300,Data Plots 
+STAMP 
+
+EXPORT,D:\WX\scripts\Output\Jetstream\Jet_@FFZ@MMZ@DDZ@HHZ@NNZ.jpg 
+EXPORT,Z:\public_html\jetstream\jet_@FFZ@MMZ@DDZ@HHZ@NNZ.gif 
+---END jet.dsf--- 
+
+
+---BEGIN 6hr_precip.dsf--- 
+LOAD,D:\Program Files\DigitalAtmosphereWS\maps\print\whatever.dmf 
+
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/sao/@Y@M@D@H_sao.wmo,D:\wx\scripts\ingest\metar.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo,D:\wx\scripts\ingest\synop.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo,D:\wx\scripts\ingest\buoy.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/upperair/@Y@M@D@X_upa.wmo,D:\wx\scripts\ingest\raob.txt 
+
+# INGEST,D:\wx\scripts\ingest\*.txt 
+
+ANALYZE,FILL FILS=0 COLOR=160:160:255 GRTN=0 PC06 
+ANALYZE,FILL FILS=0 COLOR=116:116:255 GRTN=1 PC06 
+ANALYZE,FILL FILS=0 COLOR=96:96:255 GRTN=2 PC06 
+ANALYZE,FILL FILS=0 COLOR=64:64:255 GRTN=3 PC06 
+ANALYZE,FILL FILS=0 COLOR=32:32:255 GRTN=4 PC06 
+
+BASEMAP 
+
+ANALYZE,CONT CINT=1 DASH COLOR=100:100:100 
+
+ANALYZE,VECT COLOR=0:0:255 WIND 
+STAMP 
+
+EXPORT,D:\WX\scripts\Output\Precip\6hr_precip_@FFZ@MMZ@DDZ@HHZ@NNZ.jpg 
+EXPORT,Z:\public_html\precip\6hr_precip_@FFZ@MMZ@DDZ@HHZ@NNZ.gif 
+---END 6hr_precip.dsf--- 
+
+
+---BEGIN Boyden.dsf--- 
+LOAD,D:\Program Files\DigitalAtmosphereWS\maps\print\whatever.dmf 
+
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/sao/@Y@M@D@H_sao.wmo,D:\wx\scripts\ingest\metar.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo,D:\wx\scripts\ingest\synop.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo,D:\wx\scripts\ingest\buoy.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/upperair/@Y@M@D@X_upa.wmo,D:\wx\scripts\ingest\raob.txt 
+
+# INGEST,D:\wx\scripts\ingest\*.txt 
+
+ANALYZE,STOR=1 HGHT H000 
+ANALYZE,STOR=2 HGHT H700 
+ANALYZE,STOR=3 TEMP H700 
+ANALYZE,STOR=4 SDIF 2:1 
+ANALYZE,STOR=5 SDVC 4:10 
+ANALYZE,STOR=6 SDIF 5:3 
+
+ANALYZE,CONT GRTN 94 CINT=2 DASH COLOR=200:0:0 SSBC=6:200 
+
+ANALYZE,OVER FILL COLOR=128:255:100 FILS=0 GRTN=94 
+ANALYZE,OVER FILL COLOR=255:204:000 FILS=0 GRTN=96 
+ANALYZE,OVER FILL COLOR=255:64:64 FILS=0 GRTN=98 
+
+ANALYZE,CONT GRTN 94 CINT=2 DASH COLOR=200:0:0 SSBC=6:200 
+
+ANALYZE,VECT COLOR=0:0:255 WIND 
+PRODUCT,plf,500,Data Plots 
+STAMP 
+
+EXPORT,D:\WX\scripts\Output\Stability\Boyden\Boyden_@FFZ@MMZ@DDZ@HHZ@NNZ.jpg 
+EXPORT,Z:\public_html\stability\boyden\boyden_@FFZ@MMZ@DDZ@HHZ@NNZ.gif 
+---END Boyden.dsf--- 
+
+
+---BEGIN KO.dsf--- 
+LOAD,D:\Program Files\DigitalAtmosphereWS\maps\print\whatever.dmf 
+
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/sao/@Y@M@D@H_sao.wmo,D:\wx\scripts\ingest\metar.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo,D:\wx\scripts\ingest\synop.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo,D:\wx\scripts\ingest\buoy.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/upperair/@Y@M@D@X_upa.wmo,D:\wx\scripts\ingest\raob.txt 
+
+# INGEST,D:\wx\scripts\ingest\*.txt 
+
+
+ANALYZE,STOR=1 THTE H500 
+ANALYZE,STOR=2 THTE H700 
+ANALYZE,STOR=3 THTE H850 
+ANALYZE,STOR=4 THTE H000 
+ANALYZE,STOR=5 SSUM=1:2 
+ANALYZE,STOR=6 SSUM=3:4 
+ANALYZE,STOR=7 SDVC=5:2 
+ANALYZE,STOR=8 SDVC=6:2 
+ANALYZE,SDIF=7:8 
+
+ANALYZE,OVER FILL COLOR=255:255:100 FILS=0 LSTN=6 
+ANALYZE,OVER FILL COLOR=255:240:000 FILS=0 LSTN=2 
+ANALYZE,OVER FILL COLOR=255:204:000 FILS=0 LSTN=0 
+
+ANALYZE,CONT LSTN=6 CINT=2 DASH COLOR=200:100:100 
+
+ANALYZE,VECT COLOR=0:0:255 WIND 
+PRODUCT,plf,500,Data Plots 
+STAMP 
+
+EXPORT,D:\WX\scripts\Output\Stability\KO\KO_@FFZ@MMZ@DDZ@HHZ@NNZ.jpg 
+EXPORT,Z:\public_html\stability\ko\KO_@FFZ@MMZ@DDZ@HHZ@NNZ.gif 
+---END KO.dsf--- 
+
+
+---BEGIN press_levels.dsf--- 
+LOAD,D:\Program Files\DigitalAtmosphereWS\maps\print\whatever.dmf 
+
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/sao/@Y@M@D@H_sao.wmo,D:\wx\scripts\ingest\metar.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo,D:\wx\scripts\ingest\synop.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo,D:\wx\scripts\ingest\buoy.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/upperair/@Y@M@D@X_upa.wmo,D:\wx\scripts\ingest\raob.txt 
+
+# INGEST,D:\wx\scripts\ingest\*.txt 
+
+SET,1,850 
+
+ANALYZE,H$$1 
+ANALYZE,CONT CINT=10 COLOR=80:80:140 HGHT H$$1 
+PRODUCT,plf,$$1,Data Plots 
+ANALYZE,VECT COLOR=0:0:255 WIND HGHT H$$1 
+STAMP 
+EXPORT,D:\WX\scripts\Output\Pressure\$$1mb\$$1mb_@FFZ@MMZ@DDZ@HHZ@NNZ.jpg 
+EXPORT,Z:\public_html\pressure\$$1mb\$$1mb_@FFZ@MMZ@DDZ@HHZ@NNZ.gif 
+
+ERASE 
+SET,1,500 
+
+ANALYZE,H$$1 
+ANALYZE,CONT CINT=10 COLOR=80:80:140 HGHT H$$1 
+PRODUCT,plf,$$1,Data Plots 
+ANALYZE,VECT COLOR=0:0:255 WIND HGHT H$$1 
+STAMP 
+EXPORT,D:\WX\scripts\Output\Pressure\$$1mb\$$1mb_@FFZ@MMZ@DDZ@HHZ@NNZ.jpg 
+EXPORT,Z:\public_html\pressure\$$1mb\$$1mb_@FFZ@MMZ@DDZ@HHZ@NNZ.gif 
+
+ERASE 
+SET,1,250 
+
+ANALYZE,H$$1 
+ANALYZE,CONT CINT=10 COLOR=80:80:140 HGHT H$$1 
+PRODUCT,plf,$$1,Data Plots 
+ANALYZE,VECT COLOR=0:0:255 WIND HGHT H$$1 
+STAMP 
+EXPORT,D:\WX\scripts\Output\Pressure\$$1mb\$$1mb_@FFZ@MMZ@DDZ@HHZ@NNZ.jpg 
+EXPORT,Z:\public_html\pressure\$$1mb\$$1mb_@FFZ@MMZ@DDZ@HHZ@NNZ.gif 
+---END press_levels.dsf--- 

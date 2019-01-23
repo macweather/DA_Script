@@ -1,0 +1,91 @@
+#  Download JMA and KMA analysis charts
+#******************************** 
+#******************************************************************
+set,1,09
+# ............Set up & MONTH
+set,2,10
+# ............SET UP DATE
+set,3,09
+#
+#=============== DOWNLOAD KMA Chart=========================
+DOWNLOAD,http://www.kma.go.kr/cht/img/sfc3_20$$1$$2$$300.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$300SFCs.png
+DOWNLOAD,http://www.kma.go.kr/cht/img/sfc3_20$$1$$2$$303.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$303SFCs.png
+DOWNLOAD,http://www.kma.go.kr/cht/img/sfc3_20$$1$$2$$306.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$306SFCs.png
+DOWNLOAD,http://www.kma.go.kr/cht/img/sfc3_20$$1$$2$$309.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$309SFCs.png
+DOWNLOAD,http://www.kma.go.kr/cht/img/sfc3_20$$1$$2$$312.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$312SFCs.png
+DOWNLOAD,http://www.kma.go.kr/cht/img/sfc3_20$$1$$2$$315.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$315SFCs.png
+DOWNLOAD,http://www.kma.go.kr/cht/img/sfc3_20$$1$$2$$318.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$318SFCs.png
+DOWNLOAD,http://www.kma.go.kr/cht/img/sfc3_20$$1$$2$$321.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$321SFCs.png
+
+DOWNLOAD,http://www.kma.go.kr/cht/img/surf_20$$1$$2$$300.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$300SFC.png
+DOWNLOAD,http://www.kma.go.kr/cht/img/surf_20$$1$$2$$312.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$312SFC.png
+#
+#
+#925hPa Charts
+DOWNLOAD,http://www.kma.go.kr/cht/img/up92_20$$1$$2$$300.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$300_925hPa.png
+DOWNLOAD,http://www.kma.go.kr/cht/img/up92_20$$1$$2$$312.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$312_925hPa.png
+#850hPa Charts
+DOWNLOAD,http://www.kma.go.kr/cht/img/up85_20$$1$$2$$300.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$300_850hPa.png
+DOWNLOAD,http://www.kma.go.kr/cht/img/up85_20$$1$$2$$312.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$312_850hPa.png
+#700hPa Charts
+DOWNLOAD,http://www.kma.go.kr/cht/img/up70_20$$1$$2$$300.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$300_700hPa.png
+DOWNLOAD,http://www.kma.go.kr/cht/img/up70_20$$1$$2$$312.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$312_700hPa.png
+#500hPa Charts
+DOWNLOAD,http://www.kma.go.kr/cht/img/up50_20$$1$$2$$300.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$300_500hPa.png
+DOWNLOAD,http://www.kma.go.kr/cht/img/up50_20$$1$$2$$312.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$312_500hPa.png
+#300hPa Charts
+DOWNLOAD,http://www.kma.go.kr/cht/img/up30_20$$1$$2$$300.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$300_300hPa.png
+DOWNLOAD,http://www.kma.go.kr/cht/img/up30_20$$1$$2$$312.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$312_300hPa.png
+#200hPa Charts
+DOWNLOAD,http://www.kma.go.kr/cht/img/up20_20$$1$$2$$300.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$300_200hPa.png
+DOWNLOAD,http://www.kma.go.kr/cht/img/up20_20$$1$$2$$312.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$312_200hPa.png
+#100hPa Charts
+DOWNLOAD,http://www.kma.go.kr/cht/img/up10_20$$1$$2$$300.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$300_100hPa.png
+DOWNLOAD,http://www.kma.go.kr/cht/img/up10_20$$1$$2$$312.png,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$312_100hPa.png
+#
+DOWNLOAD,http://www.kma.go.kr/cht/img/r3oi_lc30_anal_axfe01_pb4_20$$1$$2$$300.gif,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$300_anaylsis.gif
+DOWNLOAD,http://www.kma.go.kr/cht/img/r3oi_lc30_anal_axfe01_pb4_20$$1$$2$$312.gif,C:\Users\MacWeather\MAPS\Analysis\KMA\20$$1$$2$$312_anaylsis.gif
+#
+#
+#
+#*******************************************************************
+#  Download JMA anaylsis charts
+#*******************************************************************
+#
+DOWNLOAD,http://www.imocwx.com/wxfax/asas_00.gif,C:\Users\MacWeather\MAPS\Analysis\JMA\20$$1$$2$$300_SFC.gif
+DOWNLOAD,http://www.imocwx.com/wxfax/asas_06.gif,C:\Users\MacWeather\MAPS\Analysis\JMA\20$$1$$2$$306_SFC.gif
+DOWNLOAD,http://www.imocwx.com/wxfax/asas_12.gif,C:\Users\MacWeather\MAPS\Analysis\JMA\20$$1$$2$$312_SFC.gif
+DOWNLOAD,http://www.imocwx.com/wxfax/asas_18.gif,C:\Users\MacWeather\MAPS\Analysis\JMA\20$$1$$2$$318_SFC.gif
+#
+#
+#
+DOWNLOAD,http://www.imocwx.com/wxfax/au87_00.gif,C:\Users\MacWeather\MAPS\Analysis\JMA\20$$1$$2$$300_87.gif
+DOWNLOAD,http://www.imocwx.com/wxfax/au87_12.gif,C:\Users\MacWeather\MAPS\Analysis\JMA\20$$1$$2$$312_87.gif
+#
+#
+DOWNLOAD,http://www.imocwx.com/wxfax/au53_00.gif,C:\Users\MacWeather\MAPS\Analysis\JMA\20$$1$$2$$300_53.gif
+DOWNLOAD,http://www.imocwx.com/wxfax/au53_12.gif,C:\Users\MacWeather\MAPS\Analysis\JMA\20$$1$$2$$312_53.gif
+
+
+#*******************************************************************
+#  Download CIMSS anaylsis charts
+#*******************************************************************
+
+
+DOWNLOAD,http://cimss.ssec.wisc.edu/tropic2/real-time/westpac/winds/wgmssht.GIF,C:\Users\MacWeather\MAPS\Analysis\CMISS\20$$1$$2$$3.gif
+DOWNLOAD,http://cimss.ssec.wisc.edu/tropic2/real-time/westpac/winds/wgmssht-1.GIF,C:\Users\MacWeather\MAPS\Analysis\CMISS\20$$1$$2$$3-1.gif
+DOWNLOAD,http://cimss.ssec.wisc.edu/tropic2/real-time/westpac/winds/wgmssht-2.GIF,C:\Users\MacWeather\MAPS\Analysis\CMISS\20$$1$$2$$3-2.gif
+DOWNLOAD,http://cimss.ssec.wisc.edu/tropic2/real-time/westpac/winds/wgmssht-3.GIF,C:\Users\MacWeather\MAPS\Analysis\CMISS\20$$1$$2$$3-3.gif
+DOWNLOAD,http://cimss.ssec.wisc.edu/tropic2/real-time/westpac/winds/wgmssht-4.GIF,C:\Users\MacWeather\MAPS\Analysis\CMISS\20$$1$$2$$3-4.gif
+DOWNLOAD,http://cimss.ssec.wisc.edu/tropic2/real-time/westpac/winds/wgmssht-5.GIF,C:\Users\MacWeather\MAPS\Analysis\CMISS\20$$1$$2$$3-5.gif
+DOWNLOAD,http://cimss.ssec.wisc.edu/tropic2/real-time/westpac/winds/wgmssht-6.GIF,C:\Users\MacWeather\MAPS\Analysis\CMISS\20$$1$$2$$3-6.gif
+DOWNLOAD,http://cimss.ssec.wisc.edu/tropic2/real-time/westpac/winds/wgmssht-7.GIF,C:\Users\MacWeather\MAPS\Analysis\CMISS\20$$1$$2$$3-7.gif
+DOWNLOAD,http://cimss.ssec.wisc.edu/tropic2/real-time/westpac/winds/wgmssht-8.GIF,C:\Users\MacWeather\MAPS\Analysis\CMISS\20$$1$$2$$3-8.gif
+
+
+
+
+
+
+
+

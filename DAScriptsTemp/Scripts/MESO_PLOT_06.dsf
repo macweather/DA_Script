@@ -1,0 +1,35 @@
+#  URL reference
+#****************************************************************************************************
+#*** http://weather.cod.edu/digatmos/syn/@Y@M@D@I.syn  ------------------------ SYNOPTIC DATA       *
+#*** http://weather.cod.edu/digatmos/sao/@Y@M@D@H.sao .... .....................METAR DATA          *
+#*** http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo---- SYNOPTIC DATA       *
+#*** http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo---- BOUYANCY DATA       *
+#*** http://weather.cod.edu/digatmos/upa/@Y@M@D@X.upa ------------------------- UPPER AIR DATA      * 
+#*** http://meteora.ucsd.edu/weather/observations/upperair/@Y@M@D@X_upa.wmo --- UPPER AIR DATA      *
+#*** http://www.met.fsu.edu/Data/archive/metar/20@Y@M@D@H_metar --------------- METAR               *
+#*** http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo --- SURFACE DATA        *
+#*** http://www.rap.ucar.edu/weather/upper.html                                                     *
+#****************************************************************************************************
+#download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D00_syn.wmo,D:\DigitalAtmosphereWS\data\@YYZ@MMZ@DDZ00.syn
+#download,http://meteora.ucsd.edu/weather/observations/sao/@Y@M@D00_sao.wmo,D:\DigitalAtmosphereWS\data\@YYZ@MMZ@DDZ00.sao
+#---------- import the data -----------------------------------------------------------------------------
+#ingest,D:\DigitalAtmosphereWS\data\@YYZ@MMZ@DDZ00.sao
+#ingest,D:\DigitalAtmosphereWS\data\@YYZ@MMZ@DDZ00.syn
+#----------PLOT MESO_SCALE MAP--------------------------------------------------
+MAKE,1,26.0,120.0,2500,1000,800,0,0,1,1
+#-------------------------------------------------------------------------------
+#------PLOT SFC Wx CHART -------------------------------
+#ingest,D:\DigitalAtmosphereWS\data\@YYZ@MMZ@DDZ00.syn
+ERASE
+#...... PLOT RH ........................................
+ANALYZE,OVER FILL COLOR=000:110:000 EQUA=100 OVER FILL COLOR=10:140:10 GRTN=95 OVER FILL COLOR=50:170:50 GRTN=90 OVER FILL COLOR=75:220:75 GRTN=85 OVER FILL COLOR=90:255:90 GRTN=80 OVER FILL COLOR=150:255:150 GRTN=70 SADC=1:00 STOR=1 RELH HSFC
+ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000:160:000 RELH HSFC
+ANALYZE,CONT CINT=3 LINE=1 DASH COLOR=255,000,000 TEMP HSFC
+ANALYZE,HILO CONT CINT=1 LINE=2 SOLID COLOR=000,000,000 SLPR HSFC
+point
+PRODUCT,PLF,0,PLOT
+STAMP
+EXPORT,D:\DIGITALATMOSPHEREWS\MAPS\@YYL@MML@DDL00_SFCm.GIF
+#------------ End of This Script.------------------
+#...........Restore Original Map
+MAKE,1,34.0,118.0,5000,1000,800,0,0,1,1

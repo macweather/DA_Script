@@ -1,0 +1,35 @@
+#---BEGIN K.dsf--- 
+#LOAD,D:\Program Files\DigitalAtmosphereWS\maps\print\whatever.dmf 
+
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/sao/@Y@M@D@H_sao.wmo,D:\wx\scripts\ingest\metar.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo,D:\wx\scripts\ingest\synop.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo,D:\wx\scripts\ingest\buoy.txt 
+# DOWNLOAD,http://www.atmos.albany.edu/weather/data1/upperair/@Y@M@D@X_upa.wmo,D:\wx\scripts\ingest\raob.txt 
+
+# INGEST,D:\wx\scripts\ingest\*.txt 
+
+ANALYZE,STOR=1 TEMP H850 
+ANALYZE,STOR=2 TEMP H500 
+ANALYZE,STOR=3 DEGC DWPT H850 
+ANALYZE,STOR=4 TEMP H700 
+ANALYZE,STOR=5 DEGC DWPT H700 
+ANALYZE,STOR=6 SDIF=1:2 
+ANALYZE,STOR=7 SDIF=4:5 
+ANALYZE,STOR=8 SSUM=6:3 
+ANALYZE,SDIF=7:8 
+
+ANALYZE,OVER FILL COLOR=102:255:051 FILS=0 GRTN=26 
+ANALYZE,OVER FILL COLOR=255:255:100 FILS=0 GRTN=29 
+ANALYZE,OVER FILL COLOR=153:255:051 FILS=0 GRTN=32 
+ANALYZE,OVER FILL COLOR=204:255:051 FILS=0 GRTN=35 
+ANALYZE,OVER FILL COLOR=255:000:000 FILS=0 GRTN=36 
+
+ANALYZE,CONT CINT=2 DASH COLOR=200:100:100 
+
+ANALYZE,VECT COLOR=0:0:255 WIND 
+PRODUCT,plf,500,Data Plots 
+STAMP 
+
+#EXPORT,D:\WX\scripts\Output\Stability\K\K_@FFZ@MMZ@DDZ@HHZ@NNZ.jpg 
+#EXPORT,Z:\public_html\stability\k\K_@FFZ@MMZ@DDZ@HHZ@NNZ.gif 
+#---END K.dsf--- 

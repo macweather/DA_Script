@@ -1,0 +1,50 @@
+#--BEGIN K.dsf---
+#***************.K_Index  Fills_Script.dsf .**************************
+#
+#    KI = (T850 - T500) + (Td850 - Tdd700)
+#
+#  20 ~ 25       35% isolated thunderstorm
+#  26 ~ 29       50% widely scattered thunderstorms
+#  30 ~ 35       85% numerous thunderstorms
+#      >36      100% chance for thunderstorms
+#
+#-----------------------------------------------------------------------
+#
+#LOAD,D:\digitalatmospherews\synoptic.dmf
+#
+#DOWNLOAD,http://meteora.ucsd.edu/weather/observations/upperair/@Y$$2$$300_upa.wmo,D:\DigitalAtmosphereWS\archive\upa\@YYZ$$2$$300.upa
+#download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y$$2$$300_syn.wmo,D:\DigitalAtmosphereWS\archive\syn\@YYZ$$2$$300.syn
+
+ERASE
+INGEST,D:\DigitalAtmosphereWS\archive\upa\@YYZ@MMZ@DDZ00.UPA
+#
+ANALYZE,STOR=1 TEMP H850
+ANALYZE,STOR=2 TEMP H500
+ANALYZE,STOR=3 DEGC DWPT H850
+ANALYZE,STOR=4 TEMP H700
+ANALYZE,STOR=5 DEGC DWPT H700
+ANALYZE,STOR=6 SDIF=1:2
+ANALYZE,STOR=7 SDIF=4:5
+ANALYZE,STOR=8 SSUM=6:3
+ANALYZE,SDIF=7:8
+#
+ANALYZE,OVER FILL COLOR=102:255:051 FILS=0 GRTN=21
+ANALYZE,OVER FILL COLOR=255:255:100 FILS=0 GRTN=24
+ANALYZE,OVER FILL COLOR=153:255:051 FILS=0 GRTN=27
+ANALYZE,OVER FILL COLOR=254:205:051 FILS=0 GRTN=30
+ANALYZE,OVER FILL COLOR=000:255:200 FILS=0 GRTN=33
+ANALYZE,OVER FILL COLOR=255:000:255 FILS=0 GRTN=36
+ANALYZE,OVER FILL COLOR=255:180:000 FILS=0 GRTN=39
+ANALYZE,OVER FILL COLOR=255:000:150 FILS=0 GRTN=42
+ANALYZE,OVER FILL COLOR=255:000:000 FILS=0 GRTN=45
+#
+ANALYZE,CONT CINT=2 DASH COLOR=200:100:100
+#
+#INGEST,D:\DigitalAtmosphereWS\archive\syn\@YYZ@MMZ@DDZ00.syn
+#ANALYZE,HILO CONT CINT=2 LINE=2 COLOR=160:160:160 SLPR HSFC
+ANALYZE,VECT COLOR=0:0:255 WIND
+PRODUCT,plf,500,Data Plot
+#PRODUCT,plf,0,Plot
+STAMP
+EXPORT,D:\DigitalAtmosphereWS\Maps\K_@FFZ@MMZ@DDZ00.gif
+#---END K.dsf---

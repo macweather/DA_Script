@@ -1,0 +1,40 @@
+#*********************SET KEYNUMBER*********************************
+set,1,16
+# ............Set up & MONTH
+set,2,01
+# ............SET UP DATE
+set,3,05
+# ............SET UP HOUR
+set,4,00
+# ............SET UP import URL
+set,5,C:\Users\Benjamin\OneDrive\15SourceData\
+# ............SET UP output URL
+set,6,C:\Users\Benjamin\OneDrive\16Maps\
+
+
+#**************************Download DATA****************************
+#download,http://weather.cod.edu/digatmos/syn/$$1$$2$$3$$4.syn,D:\Program Files\DigAtmEquinox\archive\syn\$$1$$2$$3$$4.syn
+#download,http://www.atmos.albany.edu/weather/data1/surface/sao/$$1$$2$$3$$4_sao.wmo,D:\Program Files\DigAtmEquinox\archive\sao\$$1$$2$$3$$4.sao
+#download,http://weather.cod.edu/digatmos/upa/$$1$$2$$3$$4.upa,D:\Program Files\DigAtmEquinox\archive\upa\$$1$$2$$3$$4.upa
+#download,http://www.atmos.albany.edu/weather/data1/surface/boy/$$1$$2$$3$$4_boy.wmo,D:\Program Files\DigAtmEquinox\archive\boy\$$1$$2$$3$$4.boy
+#*******************************************************************
+
+#**************************SFC00****************************
+#------PLOT SFC Wx CHART
+ingest,$$5upa\$$1$$2$$3$$4.upa
+ERASE
+MAKE,1,34.0,118.0,5000,1000,800,0,0,1,1
+
+#...... PLOT SLP by 4mb
+#ANALYZE,HILO CONT CINT=4 LINE=2 SOLID COLOR=000,000,000 SLPR HSFC
+#ANALYZE,
+#ANALYZE,CONT CINT=5 DASH COLOR=200:0:0 GRTN=20 WSPD H500
+ANALYZE,CONT CINT=2 DASH COLOR=200.0.0 BULB H500
+#ANALYZE,OVER FILL COLOR=130:255:130 EQUA=35 OVER FILL COLOR=160:255:160 GRTN=30 OVER FILL COLOR=200:255:200 GRTN=25 OVER FILL COLOR=180:250:180 GRTN=20 WSPD H500
+STAMP
+#POINT
+EXPORT,$$6$$1$$2$$3$$4_SFC_WIDE.jpg
+
+#CONT CINT=60 DASH COLOR=200:0:0 SDIF=1:2 STOR=2 HGHT H000 STOR=1 HGHT H500
+#ANALYZE,OVER FILL COLOR=130:255:130 EQUA=100 OVER FILL COLOR=160:255:160 GRTN=90 OVER FILL COLOR=200:255:200 GRTN=80 OVER FILL COLOR=180:250:180 GRTN=70 SADC=1:0 STOR=1 RELH Hsfc
+#ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000:170:000 GRTN=70 RELH HSFC

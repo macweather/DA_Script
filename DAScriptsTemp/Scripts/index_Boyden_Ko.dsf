@@ -1,0 +1,49 @@
+#------------------  Boyden Index (BI)----for frontal thunderstorms ------
+#The Boyden index has been developed to allow better diagnosis of frontal
+#thunderstorms and is tailored for use in cool, moist climates such as North
+#Western Europe, no humidity information is included in the calculation. The
+#index is calculated using the following formula:
+#                   BI=(H700-H000)/10-T700-200
+#
+#In which H700- 1000 is the thickness of the layer between 700 and 1000 hPa
+#in decametres, T700 the temperature (in degrees Celsius) at 700 hPa. Scaling
+#factor 200 is used to bring the absolute values of the Boyden index close to a
+#range from 90 to 100. Since the index doesn't contain surface temperature
+#information, there is little variation between continental and marine air
+#masses. The diurnal variation is also small. It is especially useful with
+#cloudy conditions near fronts, when values of 94 or greater imply probable
+#thunderstorms.
+#
+#The higher the value of the Boyden index, the greater the risk of
+#thunderstorm. The threshold value is approximately 95.
+#
+ingest,D:\DigitalAtmosphereWS\archive\upa\@YYZ@MMZ@DDZ00.upa
+
+erase
+analyze,CONT GRTN=94 CINT=2 DASH COLOR=200:0:0 SSBC=6:200 STOR=6 SDIF=5:3 STOR=5 SDVC=4:10 STOR=4 SDIF=2:1 STOR=3 TEMP H700 STOR=2 HGHT H700 STOR=1 HGHT H000
+STAMP
+POINT
+#IMPORT,D:\DIGITALATMOSPHEREWS\MARK0.GIF
+EXPORT,D:\DIGITALATMOSPHEREWS\MAPS\@YYL@MML@DDL00_Boyden_I.gif
+#
+#-------------------------------------- Ko index-------------------------------------------------------------------------
+#The KO Index is a stability index tailored for use in cool, moist climates such as Northwestern Europe. The formula is:-
+#
+#The formula is:    - £ce500+£ce700)/2-(£ce850+£ce1000)/2
+#
+#Where the Pt are the equivalent potential temperatures at 500, 700, 850, and 1000 mb.
+#Values over +6 suggest little if any shower activity, while values <2 imply possible thunderstorms.
+#
+#             >6 No   Thunderstorms
+#             2 - 6   Thunderstorms possible
+#         <2 Severe   Thunderstorms possible
+erase
+ANALYZE,STOR=2 THTE H700 STOR=1 THTE H500
+ANALYZE,STOR=4 THTE H000 STOR=3 THTE H850
+ANALYZE,STOR=6 SSUM=3:4 STOR=5 SSUM=1:2
+ANALYZE,STOR=8 SDVC=6:2 STOR=7 SDVC=5:2
+ANALYZE,CONT LSTN=6 CINT=2 DASH COLOR=200:100:100 SDIF=7:8
+STAMP
+POINT
+IMPORT,D:\DIGITALATMOSPHEREWS\MARK0.GIF
+EXPORT,D:\DIGITALATMOSPHEREWS\MAPS\@YYL@MML@DDL00_KO_I.gif

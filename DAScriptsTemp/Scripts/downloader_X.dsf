@@ -1,0 +1,5 @@
+download,http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo,D:\DigitalAtmosphereWS\archive\boy\@Y@M@D@S.boy
+download,http://www.atmos.albany.edu/weather/data1/surface/sao/@Y@M@D@H_sao.wmo,D:\DigitalAtmosphereWS\archive\sao\@Y@M@D@H.sao
+download,http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo,D:\DigitalAtmosphereWS\archive\syn\@Y@M@D@S.syn
+download,http://www.atmos.albany.edu/weather/data1/surface/upperair/@Y@M@D@S_upa.wmo,D:\DigitalAtmosphereWS\archive\upa\@Y@M@D@S.syn
+download,http://www.atmos.albany.edu/weather/data1/upperair/@Y@M@D@X_upa.wmo,D:\DigitalAtmosphereWS\archive\upa\@Y@M@D@S.upa

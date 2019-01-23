@@ -1,0 +1,36 @@
+#  URL reference
+#****************************************************************************************************
+#*** http://weather.cod.edu/digatmos/syn/@Y@M@D@I.syn  ------------------------ SYNOPTIC DATA       *
+#*** http://weather.cod.edu/digatmos/sao/@Y@M@D@H.sao .... .....................METAR DATA          *
+#*** http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo---- SYNOPTIC DATA       *
+#*** http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo---- BOUYANCY DATA       *
+#*** http://weather.cod.edu/digatmos/upa/@Y@M@D@X.upa ------------------------- UPPER AIR DATA      *
+#*** http://meteora.ucsd.edu/weather/observations/upperair/@Y@M@D@X_upa.wmo --- UPPER AIR DATA      *
+#*** http://www.met.fsu.edu/Data/archive/metar/20@Y@M@D@H_metar --------------- METAR               *
+#*** http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo --- SURFACE DATA        *
+#*** http://www.rap.ucar.edu/weather/upper.html                                                     *
+#****************************************************************************************************
+#.................................................下載氣象電碼資料............................................
+#download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D00_syn.wmo,D:\DigitalAtmosphereWS\archive\syn\@YYZ@MMZ@DDZ00.syn
+#download,http://weather.cod.edu/digatmos/sao/@Y@M@D00.sao,D:\DigitalAtmosphereWS\archive\sao\@YYZ@MMZ@DDZ00.sao
+#download,http://weather.cod.edu/digatmos/upa/@Y@M@D00.upa,D:\DigitalAtmosphereWS\archive\upa\@YYZ@MMZ@DDZ00.upa
+#-------------------------------- import the data ---------------------------------------------------
+#ingest,D:\DigitalAtmosphereWS\archive\upa\@YYZ@MMZ@DDZ00.upa
+#----------------------------------------------------------------------------------------------------
+ERASE
+#..................New    Map...............................................................
+#MAKE,1,34.0,118.0,5000,1000,800,0,0,1,1
+ANALYZE,STOR=2 HGHT H500 STOR=1 HGHT H700
+ANALYZE,CONT CINT=20 LINE=1 COLOR=255:0:0 STOR=3 SDIF=2:1
+#
+ANALYZE,STOR=5 TEMP H500 STOR=4 TEMP H700
+ANALYZE,HILO CONT CINT=1 LINE=1 COLOR=0:0:255 STOR=6 SDIF=4:5
+#
+ANALYZE,CONT STOR=8 SMLC=7:1000 STOR=7 SDVD=6:3
+#ANALYZE,CONT STOR=8 SMLC=7:1000 STOR=7 SDVD=3:6
+ANALYZE,CONT CINT=1 LINE=2 COLOR=255:100:255 SADC=8:0
+STAMP
+#POINT
+#IMPORT,D:\DIGITALATMOSPHEREWS\MARK_850_T-Adv.GIF
+EXPORT,D:\DIGITALATMOSPHEREWS\MAPS\@YYL@MML@DDL00_L57.gif
+#=============================================================================================================

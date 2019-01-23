@@ -1,0 +1,45 @@
+#  URL reference
+#****************************************************************************************************
+#*** http://weather.cod.edu/digatmos/syn/@Y@M@D@I.syn  ------------------------ SYNOPTIC DATA       *
+#*** http://weather.cod.edu/digatmos/sao/@Y@M@D@H.sao .... .....................METAR DATA          *
+#*** http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo---- SYNOPTIC DATA       *
+#*** http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo---- BOUYANCY DATA       *
+#*** http://weather.cod.edu/digatmos/upa/@Y@M@D@X.upa ------------------------- UPPER AIR DATA      * 
+#*** http://meteora.ucsd.edu/weather/observations/upperair/@Y@M@D@X_upa.wmo --- UPPER AIR DATA      *
+#*** http://www.met.fsu.edu/Data/archive/metar/20@Y@M@D@H_metar --------------- METAR               *
+#*** http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo --- SURFACE DATA        *
+#*** http://www.rap.ucar.edu/weather/upper.html                                                     *
+#****************************************************************************************************
+#download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D00_syn.wmo,D:\DigitalAtmosphereWS\data\@YYZ@MMZ@DDZ00.syn
+#
+ERASE
+#------PLOT SFC Wx CHART
+ingest,D:\DigitalAtmosphereWS\ARCHIVE\SYN\@YYZ@MMZ@DDZ00.syn
+ERASE
+#MAKE,1,34.0,118.,5000,1000,800,0,0,1,1
+#...... PLOT RH shadow
+ANALYZE,OVER FILL COLOR=140:230:140 EQUA=100 OVER FILL COLOR=160:250:160 GRTN=90 OVER FILL COLOR=200:255:200 GRTN=80 SADC=1:00 STOR=1 RELH HSFC
+ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000:200:000 GRTN=80 RELH HSFC
+ANALYZE,CONT CINT=2 DOTS COLOR=200:000:000 LSTN=0 PTEN HSFC
+ANALYZE,CONT CINT=2 DOTS COLOR=000:000:200 GRTN=10 PTEN HSFC
+ANALYZE,CONT LINE=2 COLOR=200:000:200 EQUA=0 PTEN HSFC
+ANALYZE,CONT CINT=5 LINE=1 DASH COLOR=255,000,000 TEMP HSFC
+ANALYZE,HILO CONT CINT=3 LINE=2 SOLID COLOR=000,000,000 SLPR HSFC
+point
+PRODUCT,PLF,0,PLOT
+STAMP
+EXPORT,D:\DIGITALATMOSPHEREWS\MAPS\@YYL@MML@DDL@HHZ_SFC.GIF
+#-------------------------- End of This Script.-------------------
+MAKE,1,26.0,120.,3000,1000,800,0,0,1,1
+#...... PLOT RH shadow
+ANALYZE,OVER FILL COLOR=140:230:140 EQUA=100 OVER FILL COLOR=160:250:160 GRTN=90 OVER FILL COLOR=200:255:200 GRTN=80 SADC=1:00 STOR=1 RELH HSFC
+ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000:200:000 GRTN=80 RELH HSFC
+ANALYZE,CONT CINT=2 DOTS COLOR=200:000:000 LSTN=0 PTEN HSFC
+ANALYZE,CONT CINT=2 DOTS COLOR=000:000:200 GRTN=10 PTEN HSFC
+ANALYZE,CONT LINE=2 COLOR=200:000:200 EQUA=0 PTEN HSFC
+ANALYZE,CONT CINT=5 LINE=1 DASH COLOR=255,000,000 TEMP HSFC
+ANALYZE,HILO CONT CINT=2 LINE=2 SOLID COLOR=000,000,000 SLPR HSFC
+point
+PRODUCT,PLF,0,PLOT
+STAMP
+EXPORT,D:\DIGITALATMOSPHEREWS\MAPS\@YYL@MML@DDL@HHZ_SFCm.GIF

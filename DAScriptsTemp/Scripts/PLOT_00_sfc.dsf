@@ -1,0 +1,42 @@
+#  URL reference
+#****************************************************************************************************
+#*** http://weather.cod.edu/digatmos/syn/@Y@M@D@I.syn  ------------------------ SYNOPTIC DATA       *
+#*** http://weather.cod.edu/digatmos/sao/@Y@M@D@H.sao .... .....................METAR DATA          *
+#*** http://www.atmos.albany.edu/weather/data1/surface/syn/@Y@M@D@S_syn.wmo---- SYNOPTIC DATA       *
+#*** http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo---- BOUYANCY DATA       *
+#*** http://weather.cod.edu/digatmos/upa/@Y@M@D@X.upa ------------------------- UPPER AIR DATA      * 
+#*** http://meteora.ucsd.edu/weather/observations/upperair/@Y@M@D@X_upa.wmo --- UPPER AIR DATA      *
+#*** http://www.met.fsu.edu/Data/archive/metar/20@Y@M@D@H_metar --------------- METAR               *
+#*** http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo --- SURFACE DATA        *
+#*** http://www.rap.ucar.edu/weather/upper.html                                                     *
+#****************************************************************************************************
+#download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D00_syn.wmo,D:\DigitalAtmosphereWS\data\@YYZ@MMZ@DDZ00.syn
+#download,http://weather.cod.edu/digatmos/upa/@Y@M@D00.upa,D:\DigitalAtmosphereWS\data\@YYZ@MMZ@DDZ00.upa
+#......Metar data is prepared for 24 Hr Del-P in name of TEMP1.dat
+#download,http://meteora.ucsd.edu/weather/observations/metar/@Y@M@D00_sao.wmo,D:\DigitalAtmosphereWS\data\temp1.dat
+#---------- import the data -----------------------------------------------------------------------------
+#ingest,D:\DigitalAtmosphereWS\archive\upa\@YYZ@MMZ@DDZ00.upa
+#--------------------------------------------------------------------------------
+#
+#----------------------------------------------------------------------
+#------PLOT SFC Wx CHART
+ingest,D:\DigitalAtmosphereWS\archive\syn\@YYZ@MMZ@DDZ00.syn
+ERASE
+MAKE,1,34.0,118.,5000,1000,800,0,0,1,1
+#...... PLOT RH
+ANALYZE,STOR=1 RELH HSFC
+ANALYZE,OVER FILL COLOR=150:255:150 GRTN=70 SADC=1:00
+ANALYZE,OVER FILL COLOR=075:220:075 GRTN=80 SADC=1:00
+ANALYZE,OVER FILL COLOR=050:170:050 GRTN=90 SADC=1:00
+ANALYZE,OVER FILL COLOR=010:180:010 GRTN=95 SADC=1:00
+ANALYZE,OVER FILL COLOR=000:150:000 EQUA=100 SADC=1:00
+ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000:160:000 GRTN=70 RELH HSFC
+ANALYZE,CONT CINT=5 LINE=1 DASH COLOR=255,000,000 TEMP HSFC
+ANALYZE,HILO CONT CINT=3 LINE=2 SOLID COLOR=000,000,000 SLPR HSFC
+point
+PRODUCT,PLF,0,PLOT
+STAMP
+#export,d:\DigitalAtmosphereWS\maps\SFC.gif
+#EXPORT,D:\DIGITALATMOSPHEREWS\MAPS\@YYL@MML@DDL@HHL_SFC.GIF
+EXPORT,D:\DIGITALATMOSPHEREWS\MAPS\@YYL@MML@DDL00_SFC.GIF
+#------------ End of This Script.-------------------

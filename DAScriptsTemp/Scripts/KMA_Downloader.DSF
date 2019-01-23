@@ -1,0 +1,83 @@
+#----- 下載韓國氣象局天氣圖及雲圖 srcipt 檔 --------------------------------
+#說明：1. 先在 D：碟新增目錄檔，檔名為 ： MAP_TEMP
+#      2. 在MAP_TEMP下增設 KMA 與 JMA 兩個子目錄
+#      3. 將 kma_download.dsf 載到 DWA 的 run script 執行。
+#--------------------------------------------------------------------------
+#
+#---------- 開始下載： 地面天氣分析圖 -----------------------------------------------
+#DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/sfc_asas00x_00.png,D:\MAP_TEMP\KMA\k_ASASx.gif
+#
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/surf_asas00x_00.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_ASAS_00.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/sfc3_asfe00x_00.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_ASAS_00.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/sfc3_asfe00x_03.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_ASAS_03.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/sfc3_asfe00x_06.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_ASAS_06.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/sfc3_asfe00x_09.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_ASAS_09.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/sfc3_asfe00x_12.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_ASAS_12.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/sfc3_asfe00x_15.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_ASAS_15.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/sfc3_asfe00x_18.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_ASAS_18.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/sfc3_asfe00x_21.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_ASAS_21.gif
+#---------- 開始下載： 高空天氣分析圖 -------------------------------------------------
+#
+#DOWNLOAD,http://www.kma.go.kr/kma03/gif/upr_auas92x.gif,D:\MAP_TEMP\KMA\k_auas9.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/uper_auas92x_00.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_AUAS92x.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/uper_auas85x_00.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_AUAS85x.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/uper_auas70x_00.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_AUAS70x.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/uper_auas50x_00.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_AUAS50x.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/uper_auas30x_00.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_AUAS30x.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/uper_auas20x_00.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_AUAS20x.gif
+#http://www.kma.go.kr/kma03/DATA/WCHT/uper_auas85x_00.gif
+#---------- 開始下載： 東亞衛星雲圖 -----------------------------------------------
+#
+DOWNLOAD,http://www.kma.go.kr/sat/img/MTSAT_RIR_@FFZ@MMZ@DDZ2300.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ0000_IR.gif
+DOWNLOAD,http://www.kma.go.kr/sat/img/MTSAT_RIR_@FFZ@MMZ@DDZ2333.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ0000_IR.gif
+#http://www.kma.go.kr/sat/img/MTSAT_RIR_200702042300.gif（KMA）
+#http://www.jma.go.jp/en/gms/imgs_c/0/infrared/0/200702120430-00.png   (JMA彩色)
+DOWNLOAD,http://www.jma.go.jp/en/gms/imgs/0/infrared/1/@FFZ@MMZ@DDZ0000-00.png,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ0000_IR.PNG
+DOWNLOAD,http://www.jma.go.jp/en/gms/imgs/0/infrared/1/@FFZ@MMZ@DDZ0100-00.png,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ0100_IR.PNG
+DOWNLOAD,http://www.jma.go.jp/en/gms/imgs_c/0/infrared/0/@FFZ@MMZ@DDZ0000-00.png,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ0000_CIR.PNG
+DOWNLOAD,http://www.jma.go.jp/en/gms/imgs_c/0/infrared/0/@FFZ@MMZ@DDZ0100-00.png,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ0100_CIR.PNG
+DOWNLOAD,http://www.jma.go.jp/en/gms/imgs_c/0/infrared/0/@FFZ@MMZ@DDZ0200-00.png,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ0200_CIR.PNG
+DOWNLOAD,http://www.jma.go.jp/en/gms/imgs_c/0/infrared/0/@FFZ@MMZ@DDZ0300-00.png,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ0300_CIR.PNG
+DOWNLOAD,http://www.jma.go.jp/en/gms/imgs_c/0/infrared/0/@FFZ@MMZ@DDZ0400-00.png,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ0400_CIR.PNG
+DOWNLOAD,http://www.jma.go.jp/en/gms/imgs_c/0/infrared/0/@FFZ@MMZ@DDZ0500-00.png,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ0500_CIR.PNG
+DOWNLOAD,http://www.jma.go.jp/en/gms/imgs_c/0/infrared/0/@FFZ@MMZ@DDZ0600-00.png,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ0600_CIR.PNG
+DOWNLOAD,http://www.jma.go.jp/en/gms/imgs_c/0/infrared/0/@FFZ@MMZ@DDZ0700-00.png,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ0700_CIR.PNG
+DOWNLOAD,http://www.jma.go.jp/en/gms/imgs_c/0/infrared/0/@FFZ@MMZ@DDZ1200-00.png,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ1200_CIR.PNG
+#
+#----------- 開始下載：數值輔助分析圖 -----------------------------------------------------------
+#
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/RDPS/rdps_axfe1xx.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_AXFE1.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/RDPS/rdps_axfe2xx.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_AXFE2.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/RDPS/rdps_fxfe1xx.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_FX12.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/RDPS/rdps_fxfe2xx.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_FX24.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/RDPS/rdps_fxfe3xx.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_FX36.gif
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/RDPS/rdps_fxfe4xx.gif,D:\MAP_TEMP\KMA\@YYZ@MMZ@DDZ_FX48.gif
+# -----------------  地面數值預測圖 -------------------------------------------------------------
+#
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/GDPS/ghm_mslp_rain_12.gif,D:\MAP_TEMP\KMA\k_NWP-MSLP_12.gif
+download,http://www.kma.go.kr/kma03/DATA/GDPS/ghm_mslp_rain_24.gif,D:\MAP_TEMP\KMA\k_NWP-MSLP_24.gif
+#
+download,http://www.kma.go.kr/cht/ra2d/ra2d_asia1_vel700_ft06_pa4_s000.png,D:\MAP_TEMP\KMA\k_NWP-700_Vel.png
+download,http://www.kma.go.kr/cht/ra2d/ra2d_asia1_gph500_ft06_pa4_s000.png,D:\MAP_TEMP\KMA\k_NWP-500_Vor.png
+#
+DOWNLOAD,http://www.kma.go.kr/cht/ra2d/ra2d_asia1_kindex_ft06_pa4_s000.png,D:\MAP_TEMP\KMA\k_NWP-K_Index.png
+DOWNLOAD,http://www.kma.go.kr/cht/ra2d/ra2d_asia1_lindex_ft06_pa4_s000.pngf,D:\MAP_TEMP\KMA\k_NWP-Lift.png
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/GDPS/ghm_2str_20ws_12.gif,D:\MAP_TEMP\KMA\k_NWP-2WS_12.GIF
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/GDPS/ghm_2str_20ws_24.gif,D:\MAP_TEMP\KMA\k_NWP-2WS_24.GIF
+#
+#-------------------北半球 500 分析與 500 24hr Del_H Del_T
+DOWNLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/n50_auxn50x.gif,D:\MAP_TEMP\KMA\k_NH50_AUXN50x.gif
+DOEMLOAD,http://www.kma.go.kr/kma03/DATA/WCHT/n50_axxn50x.gif,D:\MAP_TEMP\KMA\k_NH50_AXXN50x.gif
+#
+#-----------開始下載： 日本氣象廳天氣分析圖
+DOWNLOAD,http://www.imoc.co.jp/wxfax/au87_12.gif,D:\MAP_TEMP\JMA\@YYZ@MMZ@DDZ_AU87.GIF
+DOWNLOAD,http://www.imocwx.com/wxfax/asas_00.gif,D:\MAP_TEMP\JMA\@YYZ@MMZ@DDZ_ASAS_00.GIF
+DOWNLOAD,http://www.imocwx.com/wxfax/asas_06.gif,D:\MAP_TEMP\JMA\@YYZ@MMZ@DDZ_ASAS_06.GIF
+DOWNLOAD,http://www.imocwx.com/wxfax/asas_12.gif,D:\MAP_TEMP\JMA\@YYZ@MMZ@DDZ_ASAS_12.GIF
+DOWNLOAD,http://www.imocwx.com/wxfax/asas_18.gif,D:\MAP_TEMP\JMA\@YYZ@MMZ@DDZ_ASAS_18.GIF
+#        http://www.imocwx.com/wxfax/asas_12.htm
+DOWNLOAD,http://www.imoc.co.jp/wxfax/au87_00.gif,D:\MAP_TEMP\JMA\@YYZ@MMZ@DDZ_AU87_00.GIF
+DOWNLOAD,http://www.imoc.co.jp/wxfax/au87_12.gif,D:\MAP_TEMP\JMA\@YYZ@MMZ@DDZ_AU87_12.GIF
+DOWNLOAD,http://www.imocwx.com/wxfax/au53_00.gif,D:\MAP_TEMP\JMA\@YYZ@MMZ@DDZ_AU53_00.GIF
+DOWNLOAD,http://www.imocwx.com/wxfax/au53_12.gif,D:\MAP_TEMP\JMA\@YYZ@MMZ@DDZ_AU53_12.GIF
+#
