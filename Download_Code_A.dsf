@@ -1,0 +1,46 @@
+################################################
+#########    Set up export URL     #############
+################################################
+set,8,D:\Onedrive\00Code\78SourceData\
+################################################
+
+
+
+
+#  URL reference
+#******************************** URL reference *****************************************************
+#***METAR from Albany (worldwide)
+#***http://www.atmos.albany.edu/weather/data1/surface/sao/@YYZ@MMZ@DDZ@H_sao.wmo
+*
+#***SYNOP from COD (worldwide)
+#***http://weather.cod.edu/digatmos/syn/@YYZ@MMZ@DDZ@I.syn
+*
+#***Buoy from Albany (worldwide)
+#***http://www.atmos.albany.edu/weather/data1/surface/boy/@YYZ@MMZ@DDZ@S_boy.wmo
+*
+#***Radiosonde from COD (worldwide)
+#***http://weather.cod.edu/digatmos/upa/@YYZ@MMZ@DDZ@X.upa
+*
+#***METAR from FSU (worldwide)
+#***http://dweb.met.fsu.edu/rawdata/metar/20@YYZ@MMZ@DDZ/20@YYZ@MMZ@DDZ@H.metar
+*
+#=============== DOWNLOAD AAXX REPORT ==============================================================================================
+#download,http://weather.admin.niu.edu/data/@YYZ@MMZ@DDZ00.syn,C:\Users\Benjamin\OneDrive\15SourceData\syn\@YYZ@MMZ@DDZ00.syn
+#download,http://weather.admin.niu.edu/data/@YYZ@MMZ@DDZ06.syn,C:\Users\Benjamin\OneDrive\15SourceData\syn\@YYZ@MMZ@DDZ06.syn
+#download,http://weather.admin.niu.edu/data/@YYZ@MMZ@DDZ12.syn,C:\Users\Benjamin\OneDrive\15SourceData\syn\@YYZ@MMZ@DDZ12.syn
+#download,http://weather.admin.niu.edu/data/@YYZ@MMZ@DDZ18.syn,C:\Users\Benjamin\OneDrive\15SourceData\syn\@YYZ@MMZ@DDZ18.syn
+
+
+#=============== DOWNLOAD METAR REPORT ==============================================================================================
+download,http://weather.cod.edu/digatmos/syn/@YYZ@MMZ@DDZ00.syn,$$8syn\20@YYZ@MMZ@DDZ00Z.syn
+download,http://weather.cod.edu/digatmos/syn/@YYZ@MMZ@DDZ03.syn,$$8syn\20@YYZ@MMZ@DDZ03Z.syn
+download,http://weather.cod.edu/digatmos/syn/@YYZ@MMZ@DDZ06.syn,$$8syn\20@YYZ@MMZ@DDZ06Z.syn
+download,http://weather.cod.edu/digatmos/syn/@YYZ@MMZ@DDZ09.syn,$$8syn\20@YYZ@MMZ@DDZ09Z.syn
+download,http://weather.cod.edu/digatmos/syn/@YYZ@MMZ@DDZ12.syn,$$8syn\20@YYZ@MMZ@DDZ12Z.syn
+download,http://weather.cod.edu/digatmos/syn/@YYZ@MMZ@DDZ15.syn,$$8syn\20@YYZ@MMZ@DDZ15Z.syn
+download,http://weather.cod.edu/digatmos/syn/@YYZ@MMZ@DDZ18.syn,$$8syn\20@YYZ@MMZ@DDZ18Z.syn
+download,http://weather.cod.edu/digatmos/syn/@YYZ@MMZ@DDZ21.syn,$$8syn\20@YYZ@MMZ@DDZ21Z.syn
+
+#=============== DOWNLOAD RAWINSONDE REPORT ========================================================================================
+DOWNLOAD,http://weather.cod.edu/digatmos/upa/@YYZ@MMZ@DDZ00.upa,$$8upa\20@YYZ@MMZ@DDZ00Z.upa
+DOWNLOAD,http://weather.cod.edu/digatmos/upa/@YYZ@MMZ@DDZ12.upa,$$8upa\20@YYZ@MMZ@DDZ12Z.upa
