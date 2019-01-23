@@ -10,7 +10,7 @@
 #*** http://www.atmos.albany.edu/weather/data1/surface/boy/@Y@M@D@S_boy.wmo --- SURFACE DATA        *
 #*** http://www.rap.ucar.edu/weather/upper.html                                                     *
 #****************************************************************************************************
-#.................................................�U����H�q�X���............................................
+#.................................................下載氣象電碼資料............................................
 download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D00_syn.wmo,D:\DigAtmEquinox\archive\syn\@YYZ@MMZ@DDZ00.syn
 download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D03_syn.wmo,D:\DigAtmEquinox\archive\syn\@YYZ@MMZ@DDZ03.syn
 download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D06_syn.wmo,D:\DigAtmEquinox\archive\syn\@YYZ@MMZ@DDZ06.syn
@@ -19,7 +19,7 @@ download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D12_syn.wmo,
 download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D15_syn.wmo,D:\DigAtmEquinox\archive\syn\@YYZ@MMZ@DDZ15.syn
 download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D18_syn.wmo,D:\DigAtmEquinox\archive\syn\@YYZ@MMZ@DDZ18.syn
 download,http://meteora.ucsd.edu/weather/observations/synoptic/@Y@M@D21_syn.wmo,D:\DigAtmEquinox\archive\syn\@YYZ@MMZ@DDZ21.syn
-#.................................................�U����H�q�X���............................................
+#.................................................下載氣象電碼資料............................................
 download,http://meteora.ucsd.edu/weather/observations/metar/@Y@M@D00_sao.wmo,D:\DigAtmEquinox\archive\sao\@YYZ@MMZ@DDZ00.sao
 download,http://meteora.ucsd.edu/weather/observations/metar/@Y@M@D03_sao.wmo,D:\DigAtmEquinox\archive\sao\@YYZ@MMZ@DDZ03.sao
 download,http://meteora.ucsd.edu/weather/observations/metar/@Y@M@D06_sao.wmo,D:\DigAtmEquinox\archive\sao\@YYZ@MMZ@DDZ06.sao
@@ -28,10 +28,10 @@ download,http://meteora.ucsd.edu/weather/observations/metar/@Y@M@D12_sao.wmo,D:\
 download,http://meteora.ucsd.edu/weather/observations/metar/@Y@M@D15_sao.wmo,D:\DigAtmEquinox\archive\sao\@YYZ@MMZ@DDZ15.sao
 download,http://meteora.ucsd.edu/weather/observations/metar/@Y@M@D18_sao.wmo,D:\DigAtmEquinox\archive\sao\@YYZ@MMZ@DDZ18.sao
 download,http://meteora.ucsd.edu/weather/observations/metar/@Y@M@D21_sao.wmo,D:\DigAtmEquinox\archive\sao\@YYZ@MMZ@DDZ21.sao
-#.................................................�U����H�q�X���............................................
+#.................................................下載氣象電碼資料............................................
 download,http://meteora.ucsd.edu/weather/observations/upperair/@Y@M@D00_upa.wmo,D:\DigAtmEquinox\archive\upa\@YYZ@MMZ@DDZ00.upa
 download,http://meteora.ucsd.edu/weather/observations/upperair/@Y@M@D12_upa.wmo,D:\DigAtmEquinox\archive\upa\@YYZ@MMZ@DDZ12.upa
-#.................................................�U����H�q�X���............................................
+#.................................................下載氣象電碼資料............................................
 download,http://www.atmos.albany.edu/weather/data1/surface/boy/@YYZ@MMZ@DDZ00_boy.wmo,D:\Program Files\DigAtmEquinox\archive\boy\@YYZ@MMZ@DDZ00.boy
 download,http://www.atmos.albany.edu/weather/data1/surface/boy/@YYZ@MMZ@DDZ03_boy.wmo,D:\Program Files\DigAtmEquinox\archive\boy\@YYZ@MMZ@DDZ03.boy
 download,http://www.atmos.albany.edu/weather/data1/surface/boy/@YYZ@MMZ@DDZ06_boy.wmo,D:\Program Files\DigAtmEquinox\archive\boy\@YYZ@MMZ@DDZ06.boy
@@ -668,14 +668,14 @@ PRODUCT,PLF,500,PLOT
 STAMP
 EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ00_500_WetBulbT_ThetaE.gif
 
-#........PLOT 850 TEMPERATURE ADVECTION  (�ūץ��y  A��-V���� T)
+#........PLOT 850 TEMPERATURE ADVECTION  (溫度平流  A＝-V˙▽ T)
 ERASE
 ANALYZE,MXMN CONT EQUA=0 COLOR=200:0:200 LINE=2 CONT GRTN=0 CINT=0.05 COLOR=0:0:200 LINE=1 CONT LSTN=0 CINT=0.05 COLOR=200:0:0 LINE=1 ADVT TEMP/WIND H850
 STAMP
  
 EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ00_ADV_8.gif
 #=============================================================================================================
-#...........PLOT 700 TEMPERATURE ADVECTION  (�ūץ��y  A��-V���� T)
+#...........PLOT 700 TEMPERATURE ADVECTION  (溫度平流  A＝-V˙▽ T)
 ERASE
 #MAKE,1,34.0,118.0,5000,1000,800,0,0,1,1
 ANALYZE,MXMN CONT EQUA=0 COLOR=200:0:200 LINE=2 CONT GRTN=0 CINT=0.05 COLOR=0:0:200 LINE=1 CONT LSTN=0 CINT=0.05 COLOR=200:0:0 LINE=1 ADVT TEMP/WIND H700
@@ -684,44 +684,44 @@ STAMP
 EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ00_ADV_7.gif
 #================================================================================
 #
-#-------- ø�X200 HPA �����u�P���i�A�åB�N�����t�u�H���P�C����C��C
+#-------- 繪出200 HPA 等高線與報告，並且將等風速線以不同顏色填滿顏色。
 #
 ERASE
 #MAKE,1,34.0,118.0,5000,1000,800,0,0,1,1
 ANALYZE,OVER FILL COLOR=255:174:000 GRTN=090 OVER FILL COLOR=100:200:250 GRTN=080 OVER FILL COLOR=155:230:255 GRTN=070 SADC=1:00 STOR=1 VKNT WSPD H200
 ANALYZE,OVER FILL COLOR=255:050:255 GRTN=200 OVER FILL COLOR=255:079:000 GRTN=150 OVER FILL COLOR=255:127:000 GRTN=100 SADC=1:00 STOR=1 VKNT WSPD H200
 #
-#.......�b200 MB ø�V�q��
+#.......在200 MB 繪向量場
 #analyze,VECT COLOR=000:000:000 WIND H200
-#....... �b200 MB �����W���
+#....... 在200 MB 測站上填圖
 #-----------------------------------------------------------------------
-#........�b200�ϤWø�����u�A���j��120 GPM�A�u�e��2�Aø��u�A�C�⬰�¦�C
+#........在200圖上繪等高線，間隔為120 GPM，線寬為2，繪實線，顏色為黑色。
 ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000,200,000 GRTN=70 VKNT WSPD H200
 ANALYZE,HILO CONT CINT=120 LINE=2 SOLD COLOR=000,000,000 SMTH GHGT H200
 ANALYZE,CONT CINT=5 LINE=1 DASH COLOR=255,000,000 TEMP H200
 PRODUCT,PLF,200,PLOT
  
 STAMP
-#....... �N200 MB �Ͽ�X��D:\Program Files\DigAtmEquinox\maps\�A�ɦW��200.gif
+#....... 將200 MB 圖輸出到D:\Program Files\DigAtmEquinox\maps\，檔名為200.gif
 EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ00_200.gif
 #==========================================================================
 #    * REMARK : DON'T USE .JPG FILE , FIGURE QUALITY IS POOR.
 #---------------------------------------------------------------------------
-#  ø�X300 HPA �����u�P���i�A�åB�N�����t�u�H���P�C����C��C
+#  繪出300 HPA 等高線與報告，並且將等風速線以不同顏色填滿顏色。
 ERASE
 #MAKE,1,34.0,118.0,5000,1000,800,0,0,1,1
 ANALYZE,OVER FILL COLOR=255:174:000 GRTN=090 OVER FILL COLOR=100:200:250 GRTN=080 OVER FILL COLOR=155:230:255 GRTN=070 SADC=1:00 STOR=1 VKNT WSPD H300
 ANALYZE,OVER FILL COLOR=255:050:255 GRTN=200 OVER FILL COLOR=255:079:000 GRTN=150 OVER FILL COLOR=255:127:000 GRTN=100 SADC=1:00 STOR=1 VKNT WSPD H300
 #................. PLOT ISOTACHES
 ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000,200,000 GRTN=70 VKNT WSPD H300
-#.................�b300 MB ø�V�q��
+#.................在300 MB 繪向量場
 #analyze,VECT COLOR=000:000:000 WIND H300
-#................ �b300 MB �a�ϤW���
-#.................�b300�ϤWø�����u�A���j��120 GPM�A�u�e��2�Aø��u�A�C�⬰�¦�C
+#................ 在300 MB 地圖上填圖
+#.................在300圖上繪等高線，間隔為120 GPM，線寬為2，繪實線，顏色為黑色。
 ANALYZE,HILO CONT CINT=120 LINE=2 SOLD COLOR=000,000,000 SMTH GHGT H300
 ANALYZE,CONT CINT=5 LINE=1 DASH COLOR=255,000,000 TEMP H300
 PRODUCT,PLF,300,PLOT
-#....... �N300 MB �Ͽ�X��D:\Program Files\DigAtmEquinox\maps\�A�ɦW��300.gif
+#....... 將300 MB 圖輸出到D:\Program Files\DigAtmEquinox\maps\，檔名為300.gif
 STAMP
  
 EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ00_300.gif
@@ -731,16 +731,16 @@ EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ00_300.gif
 
 
 #===========================================================================
-#........�M���ù�
+#........清除螢幕
 ERASE
 #MAKE,1,34.0,118.0,5000,1000,800,0,0,1,1
 #..... PLOT 500 MB WEATHER MAP WITH WIND FIELD OVER 50 KTS............
 ANALYZE,OVER FILL COLOR=240:230:000 GRTN=150 OVER FILL COLOR=230:200:000 GRTN=120 OVER FILL COLOR=206:255:000 GRTN=100 OVER FILL COLOR=000:255:179 GRTN=80 OVER FILL COLOR=000:230:255 GRTN=50 SADC=1:00 STOR=1 VKNT WSPD H500
-#....ø�۹���׽u(ø�t���׳��v)
+#....繪相對渦度線(繪負渦度陰影)
 ANALYZE,OVER FILL COLOR=080:080:190 LSTN=0 SADC=2:6 OVER FILL COLOR=100:100:230 LSTN=0 SADC=2:5 OVER FILL COLOR=120:120:240 LSTN=0 SADC=2:4 OVER FILL COLOR=140:140:250 LSTN=0 SADC=2:3 OVER FILL COLOR=170:170:255 LSTN=0 SADC=2:2 OVER FILL COLOR=200:200:255 LSTN=0 SADC=2:1 OVER FILL COLOR=255:255:255 LSTN=0 SADC=2:0 STOR=2 SMLC=1:100000 STOR=1 RVRT WIND H500
-#....ø�۹���׽u(ø�����׳��v)
+#....繪相對渦度線(繪正渦度陰影)
 ANALYZE,OVER FILL COLOR=220:090:050 GRTN=6 OVER FILL COLOR=240:170:050 GRTN=5 OVER FILL COLOR=240:080:080 GRTN=4 OVER FILL COLOR=250:120:120 GRTN=3 OVER FILL COLOR=250:160:160 GRTN=2 OVER FILL COLOR=255:190:190 GRTN=1 OVER FILL COLOR=255:255:255 GRTN=0 SMLC=1:100000 STOR=1 RVRT WIND H500
-#.....ø�۹���׽u(ø����)
+#.....繪相對渦度線(繪渦度)
 ANALYZE,CONT LINE=2 SOLID COLOR=255:0:255 EQUA=0 MXMN CONT CINT=1 dots COLOR=250:50:250 SMLC=1:100000 STOR=1 RVRT WIND H500
 ANALYZE,HILO CONT CINT=60 LINE=2 SOLD COLOR=000,000,000 SMTH HGHT H500
 ANALYZE,CONT CINT=5 LINE=1 DASH COLOR=200,000,000 TEMP H500
@@ -810,14 +810,14 @@ ERASE
 MAKE,1,26.0,120.0,3000,1000,800,0,0,1,1
 #-------------------------------------------------------------------------------
 #ingest,D:\Program Files\DigAtmEquinox\archive\upa\@YYZ@MMZ@DDZ00.upa
-#-------- ø�X200 HPA �����u�P���i�A�åB�N�����t�u�H���P�C����C��C
-#...........PLOT 850 TEMPERATURE ADVECTION  (�ūץ��y  A��-V���� T)
+#-------- 繪出200 HPA 等高線與報告，並且將等風速線以不同顏色填滿顏色。
+#...........PLOT 850 TEMPERATURE ADVECTION  (溫度平流  A＝-V˙▽ T)
 ANALYZE,MXMN CONT EQUA=0 COLOR=200:0:200 LINE=2 CONT GRTN=0 CINT=0.1 COLOR=0:0:200 LINE=1 CONT LSTN=0 CINT=0.1 COLOR=200:0:0 LINE=1 ADVT TEMP/WIND H850
 STAMP
  
 EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ00_ADV_8m.gif
 #........................................................................
-#...........PLOT 700 TEMPERATURE ADVECTION  (�ūץ��y  A��-V���� T)
+#...........PLOT 700 TEMPERATURE ADVECTION  (溫度平流  A＝-V˙▽ T)
 ERASE
 MAKE,1,26.0,120.0,3000,1000,800,0,0,1,1
 ANALYZE,MXMN CONT EQUA=0 COLOR=200:0:200 LINE=2 CONT GRTN=0 CINT=0.1 COLOR=0:0:200 LINE=1 CONT LSTN=0 CINT=0.1 COLOR=200:0:0 LINE=1 ADVT TEMP/WIND H700
@@ -830,51 +830,51 @@ MAKE,1,26.0,120.,3000,1000,800,0,0,1,1
 ANALYZE,OVER FILL COLOR=255:255:000 GRTN=70 OVER FILL COLOR=000:255:179 GRTN=60 OVER FILL COLOR=000:230:255 GRTN=50 SADC=1:00 STOR=1 VKNT WSPD H200
 ANALYZE,OVER FILL COLOR=255:079:000 GRTN=110 OVER FILL COLOR=255:127:000 GRTN=100 OVER FILL COLOR=255:174:000 GRTN=90 OVER FILL COLOR=255:230:000 GRTN=80 SADC=1:00 STOR=1 VKNT WSPD H200
 #
-#.......�b200 MB ø�V�q��
+#.......在200 MB 繪向量場
 #analyze,VECT COLOR=000:000:000 WIND H200
-#....... �b200 MB �����W���
+#....... 在200 MB 測站上填圖
 #-----------------------------------------------------------------------
-#........�b200�ϤWø�����u�A���j��60 GPM�A�u�e��2�Aø��u�A�C�⬰�¦�C
+#........在200圖上繪等高線，間隔為60 GPM，線寬為2，繪實線，顏色為黑色。
 ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000,200,000 GRTN=70 VKNT WSPD H200
 ANALYZE,HILO CONT CINT=60 LINE=2 SOLD COLOR=000,000,000 SMTH HGHT H200
 ANALYZE,CONT CINT=3 LINE=1 DASH COLOR=255,000,000 TEMP H200
 PRODUCT,PLF,200,PLOT
 STAMP
  
-#....... �N200 MB �Ͽ�X��D:\Program Files\DigAtmEquinox\maps\�A�ɦW��200.gif
+#....... 將200 MB 圖輸出到D:\Program Files\DigAtmEquinox\maps\，檔名為200.gif
 EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ00_200m.gif
 #
 #    * REMARK : DON'T USE .JPG FILE , FIGURE QUALITY IS POOR.
 #===========================================================================
 #
-#  ø�X300 HPA �����u�P���i�A�åB�N�����t�u�H���P�C����C��C
+#  繪出300 HPA 等高線與報告，並且將等風速線以不同顏色填滿顏色。
 ERASE
 MAKE,1,26.0,120.,3000,1000,800,0,0,1,1
 ANALYZE,OVER FILL COLOR=255:079:000 GRTN=150 OVER FILL COLOR=255:127:000 GRTN=120 OVER FILL COLOR=255:174:000 GRTN=100 OVER FILL COLOR=255:230:000 GRTN=80 SADC=1:00 STOR=1 VKNT WSPD H300
 #............. PLOT ISOTACHES
 ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000,200,000 GRTN=70 VKNT WSPD H300
 #
-#.......�b300 MB ø�V�q��
+#.......在300 MB 繪向量場
 analyze,VECT COLOR=000:000:000 WIND H300
-#....... �b300 MB �a�ϤW���
-#........�b300�ϤWø�����u�A���j��120 GPM�A�u�e��2�Aø��u�A�C�⬰�¦�C
+#....... 在300 MB 地圖上填圖
+#........在300圖上繪等高線，間隔為120 GPM，線寬為2，繪實線，顏色為黑色。
 ANALYZE,HILO CONT CINT=60 LINE=2 SOLD COLOR=000,000,000 SMTH HGHT H300
 ANALYZE,CONT CINT=3 LINE=1 DASH COLOR=255,000,000 TEMP H300
 PRODUCT,PLF,300,PLOT
-#....... �N300 MB �Ͽ�X��D:\Program Files\DigAtmEquinox\maps\�A�ɦW��300.gif
+#....... 將300 MB 圖輸出到D:\Program Files\DigAtmEquinox\maps\，檔名為300.gif
 # 
 STAMP
 EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ00_300m.gif
 #==========================================================================-
-#........�M���ù�
+#........清除螢幕
 ERASE
 MAKE,1,26.0,120.,3000,1000,800,0,0,1,1
 #..... PLOT 500 MB WEATHER MAP WITH WIND FIELD OVER 40 KTS............
 ANALYZE,OVER FILL COLOR=240:230:000 GRTN=90 OVER FILL COLOR=230:200:000 GRTN=80 OVER FILL COLOR=206:255:000 GRTN=70 OVER FILL COLOR=000:255:179 GRTN=60 OVER FILL COLOR=000:230:255 GRTN=50 SADC=1:00 STOR=1 VKNT WSPD H500
 #
-#....ø�۹���׽u(ø�����׳��v)
+#....繪相對渦度線(繪正渦度陰影)
 ANALYZE,OVER FILL COLOR=080:080:190 LSTN=0 SADC=2:6 OVER FILL COLOR=100:100:230 LSTN=0 SADC=2:5 OVER FILL COLOR=120:120:240 LSTN=0 SADC=2:4 OVER FILL COLOR=140:140:250 LSTN=0 SADC=2:3 OVER FILL COLOR=170:170:255 LSTN=0 SADC=2:2 OVER FILL COLOR=200:200:255 LSTN=0 SADC=2:1 OVER FILL COLOR=255:255:255 LSTN=0 SADC=2:0 STOR=2 SMLC=1:100000 STOR=1 RVRT WIND H500
-#....ø�۹���׽u(ø�t���׳��v)
+#....繪相對渦度線(繪負渦度陰影)
 ANALYZE,OVER FILL COLOR=190:090:090 GRTN=6 OVER FILL COLOR=220:100:100 GRTN=5 OVER FILL COLOR=230:120:120 GRTN=4 OVER FILL COLOR=240:160:160 GRTN=3 OVER FILL COLOR=250:180:180 GRTN=2 OVER FILL COLOR=255:200:200 GRTN=1 OVER FILL COLOR=255:255:255 GRTN=0 SMLC=1:100000 STOR=1 RVRT WIND H500
 ANALYZE,CONT LINE=2 SOLID COLOR=255:0:255 EQUA=0 MXMN CONT CINT=1 dots COLOR=250:50:250 SMLC=1:100000 STOR=1 RVRT WIND H500
 ANALYZE,HILO CONT CINT=30 LINE=2 SOLD COLOR=000,000,000 SMTH HGHT H500
@@ -1087,14 +1087,14 @@ PRODUCT,PLF,500,PLOT
 STAMP
 EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ12_500_WetBulbT_ThetaE.gif
 
-#........PLOT 850 TEMPERATURE ADVECTION  (�ūץ��y  A��-V���� T)
+#........PLOT 850 TEMPERATURE ADVECTION  (溫度平流  A＝-V˙▽ T)
 ERASE
 ANALYZE,MXMN CONT EQUA=0 COLOR=200:0:200 LINE=2 CONT GRTN=0 CINT=0.05 COLOR=0:0:200 LINE=1 CONT LSTN=0 CINT=0.05 COLOR=200:0:0 LINE=1 ADVT TEMP/WIND H850
 STAMP
  
 EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ12_ADV_8.gif
 #=============================================================================================================
-#...........PLOT 700 TEMPERATURE ADVECTION  (�ūץ��y  A��-V���� T)
+#...........PLOT 700 TEMPERATURE ADVECTION  (溫度平流  A＝-V˙▽ T)
 ERASE
 #MAKE,1,34.0,118.0,5000,1000,800,0,0,1,1
 ANALYZE,MXMN CONT EQUA=0 COLOR=200:0:200 LINE=2 CONT GRTN=0 CINT=0.05 COLOR=0:0:200 LINE=1 CONT LSTN=0 CINT=0.05 COLOR=200:0:0 LINE=1 ADVT TEMP/WIND H700
@@ -1103,44 +1103,44 @@ STAMP
 EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ12_ADV_7.gif
 #================================================================================
 #
-#-------- ø�X200 HPA �����u�P���i�A�åB�N�����t�u�H���P�C����C��C
+#-------- 繪出200 HPA 等高線與報告，並且將等風速線以不同顏色填滿顏色。
 #
 ERASE
 #MAKE,1,34.0,118.0,5000,1000,800,0,0,1,1
 ANALYZE,OVER FILL COLOR=255:174:000 GRTN=090 OVER FILL COLOR=100:200:250 GRTN=080 OVER FILL COLOR=155:230:255 GRTN=070 SADC=1:00 STOR=1 VKNT WSPD H200
 ANALYZE,OVER FILL COLOR=255:050:255 GRTN=200 OVER FILL COLOR=255:079:000 GRTN=150 OVER FILL COLOR=255:127:000 GRTN=100 SADC=1:00 STOR=1 VKNT WSPD H200
 #
-#.......�b200 MB ø�V�q��
+#.......在200 MB 繪向量場
 #analyze,VECT COLOR=000:000:000 WIND H200
-#....... �b200 MB �����W���
+#....... 在200 MB 測站上填圖
 #-----------------------------------------------------------------------
-#........�b200�ϤWø�����u�A���j��120 GPM�A�u�e��2�Aø��u�A�C�⬰�¦�C
+#........在200圖上繪等高線，間隔為120 GPM，線寬為2，繪實線，顏色為黑色。
 ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000,200,000 GRTN=70 VKNT WSPD H200
 ANALYZE,HILO CONT CINT=120 LINE=2 SOLD COLOR=000,000,000 SMTH GHGT H200
 ANALYZE,CONT CINT=5 LINE=1 DASH COLOR=255,000,000 TEMP H200
 PRODUCT,PLF,200,PLOT
  
 STAMP
-#....... �N200 MB �Ͽ�X��D:\Program Files\DigAtmEquinox\maps\�A�ɦW��200.gif
+#....... 將200 MB 圖輸出到D:\Program Files\DigAtmEquinox\maps\，檔名為200.gif
 EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ12_200.gif
 #==========================================================================
 #    * REMARK : DON'T USE .JPG FILE , FIGURE QUALITY IS POOR.
 #---------------------------------------------------------------------------
-#  ø�X300 HPA �����u�P���i�A�åB�N�����t�u�H���P�C����C��C
+#  繪出300 HPA 等高線與報告，並且將等風速線以不同顏色填滿顏色。
 ERASE
 #MAKE,1,34.0,118.0,5000,1000,800,0,0,1,1
 ANALYZE,OVER FILL COLOR=255:174:000 GRTN=090 OVER FILL COLOR=100:200:250 GRTN=080 OVER FILL COLOR=155:230:255 GRTN=070 SADC=1:00 STOR=1 VKNT WSPD H300
 ANALYZE,OVER FILL COLOR=255:050:255 GRTN=200 OVER FILL COLOR=255:079:000 GRTN=150 OVER FILL COLOR=255:127:000 GRTN=100 SADC=1:00 STOR=1 VKNT WSPD H300
 #................. PLOT ISOTACHES
 ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000,200,000 GRTN=70 VKNT WSPD H300
-#.................�b300 MB ø�V�q��
+#.................在300 MB 繪向量場
 #analyze,VECT COLOR=000:000:000 WIND H300
-#................ �b300 MB �a�ϤW���
-#.................�b300�ϤWø�����u�A���j��120 GPM�A�u�e��2�Aø��u�A�C�⬰�¦�C
+#................ 在300 MB 地圖上填圖
+#.................在300圖上繪等高線，間隔為120 GPM，線寬為2，繪實線，顏色為黑色。
 ANALYZE,HILO CONT CINT=120 LINE=2 SOLD COLOR=000,000,000 SMTH GHGT H300
 ANALYZE,CONT CINT=5 LINE=1 DASH COLOR=255,000,000 TEMP H300
 PRODUCT,PLF,300,PLOT
-#....... �N300 MB �Ͽ�X��D:\Program Files\DigAtmEquinox\maps\�A�ɦW��300.gif
+#....... 將300 MB 圖輸出到D:\Program Files\DigAtmEquinox\maps\，檔名為300.gif
 STAMP
  
 EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ12_300.gif
@@ -1150,16 +1150,16 @@ EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ12_300.gif
 
 
 #===========================================================================
-#........�M���ù�
+#........清除螢幕
 ERASE
 #MAKE,1,34.0,118.0,5000,1000,800,0,0,1,1
 #..... PLOT 500 MB WEATHER MAP WITH WIND FIELD OVER 50 KTS............
 ANALYZE,OVER FILL COLOR=240:230:000 GRTN=150 OVER FILL COLOR=230:200:000 GRTN=120 OVER FILL COLOR=206:255:000 GRTN=100 OVER FILL COLOR=000:255:179 GRTN=80 OVER FILL COLOR=000:230:255 GRTN=50 SADC=1:00 STOR=1 VKNT WSPD H500
-#....ø�۹���׽u(ø�t���׳��v)
+#....繪相對渦度線(繪負渦度陰影)
 ANALYZE,OVER FILL COLOR=080:080:190 LSTN=0 SADC=2:6 OVER FILL COLOR=100:100:230 LSTN=0 SADC=2:5 OVER FILL COLOR=120:120:240 LSTN=0 SADC=2:4 OVER FILL COLOR=140:140:250 LSTN=0 SADC=2:3 OVER FILL COLOR=170:170:255 LSTN=0 SADC=2:2 OVER FILL COLOR=200:200:255 LSTN=0 SADC=2:1 OVER FILL COLOR=255:255:255 LSTN=0 SADC=2:0 STOR=2 SMLC=1:100000 STOR=1 RVRT WIND H500
-#....ø�۹���׽u(ø�����׳��v)
+#....繪相對渦度線(繪正渦度陰影)
 ANALYZE,OVER FILL COLOR=220:090:050 GRTN=6 OVER FILL COLOR=240:170:050 GRTN=5 OVER FILL COLOR=240:080:080 GRTN=4 OVER FILL COLOR=250:120:120 GRTN=3 OVER FILL COLOR=250:160:160 GRTN=2 OVER FILL COLOR=255:190:190 GRTN=1 OVER FILL COLOR=255:255:255 GRTN=0 SMLC=1:100000 STOR=1 RVRT WIND H500
-#.....ø�۹���׽u(ø����)
+#.....繪相對渦度線(繪渦度)
 ANALYZE,CONT LINE=2 SOLID COLOR=255:0:255 EQUA=0 MXMN CONT CINT=1 dots COLOR=250:50:250 SMLC=1:100000 STOR=1 RVRT WIND H500
 ANALYZE,HILO CONT CINT=60 LINE=2 SOLD COLOR=000,000,000 SMTH HGHT H500
 ANALYZE,CONT CINT=5 LINE=1 DASH COLOR=200,000,000 TEMP H500
@@ -1229,14 +1229,14 @@ ERASE
 MAKE,1,26.0,120.0,3000,1000,800,0,0,1,1
 #-------------------------------------------------------------------------------
 #ingest,D:\Program Files\DigAtmEquinox\archive\upa\@YYZ@MMZ@DDZ12.upa
-#-------- ø�X200 HPA �����u�P���i�A�åB�N�����t�u�H���P�C����C��C
-#...........PLOT 850 TEMPERATURE ADVECTION  (�ūץ��y  A��-V���� T)
+#-------- 繪出200 HPA 等高線與報告，並且將等風速線以不同顏色填滿顏色。
+#...........PLOT 850 TEMPERATURE ADVECTION  (溫度平流  A＝-V˙▽ T)
 ANALYZE,MXMN CONT EQUA=0 COLOR=200:0:200 LINE=2 CONT GRTN=0 CINT=0.1 COLOR=0:0:200 LINE=1 CONT LSTN=0 CINT=0.1 COLOR=200:0:0 LINE=1 ADVT TEMP/WIND H850
 STAMP
  
 EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ12_ADV_8m.gif
 #........................................................................
-#...........PLOT 700 TEMPERATURE ADVECTION  (�ūץ��y  A��-V���� T)
+#...........PLOT 700 TEMPERATURE ADVECTION  (溫度平流  A＝-V˙▽ T)
 ERASE
 MAKE,1,26.0,120.0,3000,1000,800,0,0,1,1
 ANALYZE,MXMN CONT EQUA=0 COLOR=200:0:200 LINE=2 CONT GRTN=0 CINT=0.1 COLOR=0:0:200 LINE=1 CONT LSTN=0 CINT=0.1 COLOR=200:0:0 LINE=1 ADVT TEMP/WIND H700
@@ -1249,51 +1249,51 @@ MAKE,1,26.0,120.,3000,1000,800,0,0,1,1
 ANALYZE,OVER FILL COLOR=255:255:000 GRTN=70 OVER FILL COLOR=000:255:179 GRTN=60 OVER FILL COLOR=000:230:255 GRTN=50 SADC=1:00 STOR=1 VKNT WSPD H200
 ANALYZE,OVER FILL COLOR=255:079:000 GRTN=110 OVER FILL COLOR=255:127:000 GRTN=100 OVER FILL COLOR=255:174:000 GRTN=90 OVER FILL COLOR=255:230:000 GRTN=80 SADC=1:00 STOR=1 VKNT WSPD H200
 #
-#.......�b200 MB ø�V�q��
+#.......在200 MB 繪向量場
 #analyze,VECT COLOR=000:000:000 WIND H200
-#....... �b200 MB �����W���
+#....... 在200 MB 測站上填圖
 #-----------------------------------------------------------------------
-#........�b200�ϤWø�����u�A���j��60 GPM�A�u�e��2�Aø��u�A�C�⬰�¦�C
+#........在200圖上繪等高線，間隔為60 GPM，線寬為2，繪實線，顏色為黑色。
 ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000,200,000 GRTN=70 VKNT WSPD H200
 ANALYZE,HILO CONT CINT=60 LINE=2 SOLD COLOR=000,000,000 SMTH HGHT H200
 ANALYZE,CONT CINT=3 LINE=1 DASH COLOR=255,000,000 TEMP H200
 PRODUCT,PLF,200,PLOT
 STAMP
  
-#....... �N200 MB �Ͽ�X��D:\Program Files\DigAtmEquinox\maps\�A�ɦW��200.gif
+#....... 將200 MB 圖輸出到D:\Program Files\DigAtmEquinox\maps\，檔名為200.gif
 EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ12_200m.gif
 #
 #    * REMARK : DON'T USE .JPG FILE , FIGURE QUALITY IS POOR.
 #===========================================================================
 #
-#  ø�X300 HPA �����u�P���i�A�åB�N�����t�u�H���P�C����C��C
+#  繪出300 HPA 等高線與報告，並且將等風速線以不同顏色填滿顏色。
 ERASE
 MAKE,1,26.0,120.,3000,1000,800,0,0,1,1
 ANALYZE,OVER FILL COLOR=255:079:000 GRTN=150 OVER FILL COLOR=255:127:000 GRTN=120 OVER FILL COLOR=255:174:000 GRTN=100 OVER FILL COLOR=255:230:000 GRTN=80 SADC=1:00 STOR=1 VKNT WSPD H300
 #............. PLOT ISOTACHES
 ANALYZE,CONT CINT=10 LINE=1 DOTS COLOR=000,200,000 GRTN=70 VKNT WSPD H300
 #
-#.......�b300 MB ø�V�q��
+#.......在300 MB 繪向量場
 analyze,VECT COLOR=000:000:000 WIND H300
-#....... �b300 MB �a�ϤW���
-#........�b300�ϤWø�����u�A���j��120 GPM�A�u�e��2�Aø��u�A�C�⬰�¦�C
+#....... 在300 MB 地圖上填圖
+#........在300圖上繪等高線，間隔為120 GPM，線寬為2，繪實線，顏色為黑色。
 ANALYZE,HILO CONT CINT=60 LINE=2 SOLD COLOR=000,000,000 SMTH HGHT H300
 ANALYZE,CONT CINT=3 LINE=1 DASH COLOR=255,000,000 TEMP H300
 PRODUCT,PLF,300,PLOT
-#....... �N300 MB �Ͽ�X��D:\Program Files\DigAtmEquinox\maps\�A�ɦW��300.gif
+#....... 將300 MB 圖輸出到D:\Program Files\DigAtmEquinox\maps\，檔名為300.gif
 # 
 STAMP
 EXPORT,D:\Program Files\DigAtmEquinox\MAPS\@YYZ@MMZ@DDZ12_300m.gif
 #==========================================================================-
-#........�M���ù�
+#........清除螢幕
 ERASE
 MAKE,1,26.0,120.,3000,1000,800,0,0,1,1
 #..... PLOT 500 MB WEATHER MAP WITH WIND FIELD OVER 40 KTS............
 ANALYZE,OVER FILL COLOR=240:230:000 GRTN=90 OVER FILL COLOR=230:200:000 GRTN=80 OVER FILL COLOR=206:255:000 GRTN=70 OVER FILL COLOR=000:255:179 GRTN=60 OVER FILL COLOR=000:230:255 GRTN=50 SADC=1:00 STOR=1 VKNT WSPD H500
 #
-#....ø�۹���׽u(ø�����׳��v)
+#....繪相對渦度線(繪正渦度陰影)
 ANALYZE,OVER FILL COLOR=080:080:190 LSTN=0 SADC=2:6 OVER FILL COLOR=100:100:230 LSTN=0 SADC=2:5 OVER FILL COLOR=120:120:240 LSTN=0 SADC=2:4 OVER FILL COLOR=140:140:250 LSTN=0 SADC=2:3 OVER FILL COLOR=170:170:255 LSTN=0 SADC=2:2 OVER FILL COLOR=200:200:255 LSTN=0 SADC=2:1 OVER FILL COLOR=255:255:255 LSTN=0 SADC=2:0 STOR=2 SMLC=1:100000 STOR=1 RVRT WIND H500
-#....ø�۹���׽u(ø�t���׳��v)
+#....繪相對渦度線(繪負渦度陰影)
 ANALYZE,OVER FILL COLOR=190:090:090 GRTN=6 OVER FILL COLOR=220:100:100 GRTN=5 OVER FILL COLOR=230:120:120 GRTN=4 OVER FILL COLOR=240:160:160 GRTN=3 OVER FILL COLOR=250:180:180 GRTN=2 OVER FILL COLOR=255:200:200 GRTN=1 OVER FILL COLOR=255:255:255 GRTN=0 SMLC=1:100000 STOR=1 RVRT WIND H500
 ANALYZE,CONT LINE=2 SOLID COLOR=255:0:255 EQUA=0 MXMN CONT CINT=1 dots COLOR=250:50:250 SMLC=1:100000 STOR=1 RVRT WIND H500
 ANALYZE,HILO CONT CINT=30 LINE=2 SOLD COLOR=000,000,000 SMTH HGHT H500
